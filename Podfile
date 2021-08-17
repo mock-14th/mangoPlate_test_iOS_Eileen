@@ -10,5 +10,6 @@ target 'EduTemplate' do
   pod 'AlamofireNetworkActivityIndicator'
   pod 'SnapKit'
   pod 'KakaoSDK'
+  pod 'Alamofire', '~> 5.1'
 
 end

@@ -27,7 +27,6 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="v0f-gs-Cgl"/>
                     </constraints>
-                    <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
@@ -61,6 +60,9 @@
                     <state key="normal" title="회원이 아니신가요?">
                         <color key="titleColor" red="0.49803921568627452" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
+                    <connections>
+                        <action selector="toEmailSignUp:" destination="-1" eventType="touchUpInside" id="VwJ-aO-inS"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

@@ -61,6 +61,11 @@
                             <constraint firstAttribute="height" constant="13" id="nev-oQ-aqf"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQA-V4-b8e">
+                        <rect key="frame" x="153" y="15" width="22" height="22"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" image="star" catalog="system"/>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -68,6 +73,7 @@
             <constraints>
                 <constraint firstItem="jBV-ES-ojE" firstAttribute="top" secondItem="M3R-4m-bRy" secondAttribute="bottom" constant="5" id="3TW-R8-OuY"/>
                 <constraint firstItem="cqx-LO-9dY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="6RL-rm-FVH"/>
+                <constraint firstItem="zQA-V4-b8e" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="783-U1-fxH"/>
                 <constraint firstItem="61D-PA-LQU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jBV-ES-ojE" secondAttribute="trailing" constant="2" id="B2H-rd-ga2"/>
                 <constraint firstItem="NvE-If-SMj" firstAttribute="top" secondItem="jBV-ES-ojE" secondAttribute="bottom" constant="2" id="B4K-xA-nPv"/>
                 <constraint firstItem="cqx-LO-9dY" firstAttribute="top" secondItem="NvE-If-SMj" secondAttribute="bottom" constant="3" id="HE2-M7-8SH"/>
@@ -78,6 +84,7 @@
                 <constraint firstItem="M3R-4m-bRy" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="agV-sK-fjZ"/>
                 <constraint firstItem="M3R-4m-bRy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gbi-br-jOz"/>
                 <constraint firstItem="Aco-ly-yhE" firstAttribute="top" secondItem="NvE-If-SMj" secondAttribute="bottom" constant="2" id="jXM-Tz-8z5"/>
+                <constraint firstAttribute="trailing" secondItem="zQA-V4-b8e" secondAttribute="trailing" constant="15" id="lXp-XP-igC"/>
                 <constraint firstAttribute="trailing" secondItem="M3R-4m-bRy" secondAttribute="trailing" id="mAg-Ax-Iwa"/>
                 <constraint firstAttribute="trailing" secondItem="61D-PA-LQU" secondAttribute="trailing" constant="3" id="sx4-bb-B96"/>
                 <constraint firstItem="jBV-ES-ojE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="u4a-t3-r76"/>
@@ -93,5 +100,6 @@
     <resources>
         <image name="eye.fill" catalog="system" width="128" height="78"/>
         <image name="food" width="828" height="828"/>
+        <image name="star" catalog="system" width="128" height="116"/>
     </resources>
 </document>

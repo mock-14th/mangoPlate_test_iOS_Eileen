@@ -34,6 +34,10 @@
 		CD2F0FF826CA49D8009825EF /* PlusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2F0FF626CA49D8009825EF /* PlusViewController.xib */; };
 		CD2F0FFC26CA4A73009825EF /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2F0FFA26CA4A73009825EF /* MyInfoViewController.swift */; };
 		CD2F0FFD26CA4A73009825EF /* MyInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2F0FFB26CA4A73009825EF /* MyInfoViewController.xib */; };
+		CD3C5A7E26CB8F8C000CFB1B /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3C5A7C26CB8F8C000CFB1B /* EmailSignUpViewController.swift */; };
+		CD3C5A7F26CB8F8C000CFB1B /* EmailSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3C5A7D26CB8F8C000CFB1B /* EmailSignUpViewController.xib */; };
+		CD3C5A8126CB947F000CFB1B /* EmailSignUpViewControllerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3C5A8026CB947F000CFB1B /* EmailSignUpViewControllerEntity.swift */; };
+		CD3C5A8326CB9597000CFB1B /* EmailSignUpDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3C5A8226CB9597000CFB1B /* EmailSignUpDataManager.swift */; };
 		CD77379726C7B858002E1C8D /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD77379526C7B858002E1C8D /* SplashViewController.swift */; };
 		CD77379826C7B858002E1C8D /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD77379626C7B858002E1C8D /* SplashViewController.xib */; };
 		CD77379F26C7F45C002E1C8D /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD77379D26C7F45C002E1C8D /* EmailLoginViewController.swift */; };
@@ -86,6 +90,10 @@
 		CD2F0FF626CA49D8009825EF /* PlusViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlusViewController.xib; sourceTree = "<group>"; };
 		CD2F0FFA26CA4A73009825EF /* MyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewController.swift; sourceTree = "<group>"; };
 		CD2F0FFB26CA4A73009825EF /* MyInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyInfoViewController.xib; sourceTree = "<group>"; };
+		CD3C5A7C26CB8F8C000CFB1B /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
+		CD3C5A7D26CB8F8C000CFB1B /* EmailSignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailSignUpViewController.xib; sourceTree = "<group>"; };
+		CD3C5A8026CB947F000CFB1B /* EmailSignUpViewControllerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewControllerEntity.swift; sourceTree = "<group>"; };
+		CD3C5A8226CB9597000CFB1B /* EmailSignUpDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpDataManager.swift; sourceTree = "<group>"; };
 		CD77379526C7B858002E1C8D /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		CD77379626C7B858002E1C8D /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		CD77379D26C7F45C002E1C8D /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
@@ -281,10 +289,38 @@
 			path = MyInfo;
 			sourceTree = "<group>";
 		};
+		CD3C5A7B26CB8F51000CFB1B /* EmailSignUp */ = {
+			isa = PBXGroup;
+			children = (
+				CD3C5A8426CB98FE000CFB1B /* Entity */,
+				CD3C5A8526CB990F000CFB1B /* DataManager */,
+				CD3C5A7C26CB8F8C000CFB1B /* EmailSignUpViewController.swift */,
+				CD3C5A7D26CB8F8C000CFB1B /* EmailSignUpViewController.xib */,
+			);
+			path = EmailSignUp;
+			sourceTree = "<group>";
+		};
+		CD3C5A8426CB98FE000CFB1B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CD3C5A8026CB947F000CFB1B /* EmailSignUpViewControllerEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CD3C5A8526CB990F000CFB1B /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				CD3C5A8226CB9597000CFB1B /* EmailSignUpDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		CD77379926C7B8BC002E1C8D /* Splash */ = {
 			isa = PBXGroup;
 			children = (
 				CD77379C26C7F3C9002E1C8D /* EmailLogin */,
+				CD3C5A7B26CB8F51000CFB1B /* EmailSignUp */,
 				CD77379526C7B858002E1C8D /* SplashViewController.swift */,
 				CD77379626C7B858002E1C8D /* SplashViewController.xib */,
 			);
@@ -397,6 +433,7 @@
 				CD7737B526C8E329002E1C8D /* BannerCollectionViewCell.xib in Resources */,
 				CD2F0FF826CA49D8009825EF /* PlusViewController.xib in Resources */,
 				BD4394A8252E2AE40055F2E6 /* NotoSansCJKkr-Regular.otf in Resources */,
+				CD3C5A7F26CB8F8C000CFB1B /* EmailSignUpViewController.xib in Resources */,
 				BD4394A9252E2AE40055F2E6 /* NotoSansCJKkr-Bold.otf in Resources */,
 				CD7737AB26C8BA9B002E1C8D /* SearchViewController.xib in Resources */,
 				CD7737B026C8CA09002E1C8D /* PickViewController.xib in Resources */,
@@ -459,10 +496,13 @@
 				BD439434252E1FBD0055F2E6 /* Device.swift in Sources */,
 				CD7737B826C8EC12002E1C8D /* FoodCollectionViewCell.swift in Sources */,
 				BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */,
+				CD3C5A7E26CB8F8C000CFB1B /* EmailSignUpViewController.swift in Sources */,
 				CD2F0FEE26CA2D12009825EF /* MyCustomButton.swift in Sources */,
 				CD7737A626C8B9FF002E1C8D /* BaseTabBarController.swift in Sources */,
+				CD3C5A8326CB9597000CFB1B /* EmailSignUpDataManager.swift in Sources */,
 				BD439422252E17A60055F2E6 /* String.swift in Sources */,
 				BD2FA071252F507E00C93B8B /* KobisKey.swift in Sources */,
+				CD3C5A8126CB947F000CFB1B /* EmailSignUpViewControllerEntity.swift in Sources */,
 				BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */,
 				BD439437252E1FE40055F2E6 /* BaseViewController.swift in Sources */,
 				BD439431252E1F870055F2E6 /* IndicatorView.swift in Sources */,

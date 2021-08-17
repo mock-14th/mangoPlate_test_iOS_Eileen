@@ -14,7 +14,6 @@ class MyCustomButton: UIButton {
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 12, weight: .light)
         
-        label.textColor = .darkGray
         return label
     }()
     
@@ -54,6 +53,7 @@ class MyCustomButton: UIButton {
     
     public func configure(with viewModel: MyCustomButtonViewModel){
         myTitleLabel.text = viewModel.title
+        myTitleLabel.textColor = UIColor(cgColor: viewModel.borderColor)
         myIconView.image = UIImage(named: viewModel.imageName)?.withRenderingMode(.alwaysTemplate)
         
         addSubviews()

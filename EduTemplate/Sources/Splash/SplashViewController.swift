@@ -52,4 +52,11 @@ class SplashViewController: BaseViewController {
         navigationController?.pushViewController(EmailLoginViewController(), animated: true)
     }
     
+    @IBAction func skipButton(_ sender: Any) {
+        let vc = BaseTabBarController()
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        
+        self.present(vc, animated: true)
+    }
 }

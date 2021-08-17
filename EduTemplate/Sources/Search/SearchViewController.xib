@@ -15,7 +15,6 @@
                 <outlet property="collectionViewHeight" destination="0xJ-8I-QAh" id="oDs-AH-yYw"/>
                 <outlet property="filterView" destination="Wmf-TR-rKs" id="Oym-mQ-dxA"/>
                 <outlet property="foodCollectionView" destination="gUO-cn-Nii" id="lSj-tf-oPe"/>
-                <outlet property="mainScrollView" destination="Gbx-Tc-dcE" id="km4-vR-aKQ"/>
                 <outlet property="pageControl" destination="AWR-20-Bdt" id="doH-rg-0cJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

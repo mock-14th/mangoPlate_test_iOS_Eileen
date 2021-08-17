@@ -16,11 +16,13 @@ class BaseViewController: UIViewController {
         /*self.navigationController?.navigationBar.titleTextAttributes = [
             .font : UIFont.NotoSans(.medium, size: 16),
         ]*/
+        self.navigationController?.navigationBar.isTranslucent = false
         
         // Background Color
 //        self.view.backgroundColor = .white
     }
-    func customNavBarRight() {
+    
+    func customNavBarLeft(title: String) {
         let containerView = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 70))
         let topLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 15))
         topLabel.numberOfLines = 1
@@ -34,14 +36,38 @@ class BaseViewController: UIViewController {
         bottomLabel.textAlignment = .left
         bottomLabel.font = .systemFont(ofSize: 18)
         bottomLabel.textColor = .black
-        bottomLabel.text = "가로수길"
+        bottomLabel.text = title
+        bottomLabel.sizeToFit()
+        
+        let downImg = UIImageView(frame: CGRect(x: bottomLabel.frame.width + 3, y: topLabel.frame.height + 7, width: 10, height: 6))
+        downImg.image = UIImage(systemName: "chevron.down")
+        downImg.tintColor = .black
         
         containerView.addSubview(topLabel)
         containerView.addSubview(bottomLabel)
+        containerView.addSubview(downImg)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: containerView)
     }
     
-    func customNavBarLeft() {
+    func navTitleLeftAlign(title: String) {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 60, height: view.frame.height))
+        
+        label.text = title
+        label.font = .systemFont(ofSize: 16, weight: .medium)
+        label.textAlignment = .left
+        
+        navigationItem.titleView = label
+        /*if let navigationBar = navigationController?.navigationBar {
+            label.widthAnchor.constraint(equalTo: navigationBar.widthAnchor, constant: -40).isActive = true
+        }*/
+        
+    }
+    
+    func customNavBarLeft2() {
+        
+    }
+    
+    func customNavBarRight() {
         
     }
     

@@ -27,7 +27,7 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
         super.viewDidLoad()
         self.tabBar.tintColor = UIColor.mainOrange
         self.tabBar.unselectedItemTintColor = UIColor.mainGray
-        self.tabBar.isTranslucent = true
+        self.tabBar.isTranslucent = false
         
         let searchNavController = UINavigationController(rootViewController: searchViewController)
         let pickNavController = UINavigationController(rootViewController: pickViewController)

@@ -13,12 +13,17 @@ class SearchViewController: BaseViewController {
     
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
     
-    @IBOutlet weak var mainScrollView: UIScrollView!
-    
     @IBOutlet weak var pageControl: UIPageControl!
     var nowPage: Int = 0
     
     @IBOutlet weak var filterView: UIView!
+    
+    private let myLocationButton: MyCustomButton = {
+        let button = MyCustomButton(frame: CGRect(x: 245, y: 10, width: 80, height: 32))
+        button.backgroundColor = .mainLightGray
+        button.tintColor = .mainOrange
+        return button
+    }()
     
     private let myFilterButton: MyCustomButton = {
         let button = MyCustomButton(frame: CGRect(x: 338, y: 10, width: 65, height: 32))
@@ -51,11 +56,15 @@ class SearchViewController: BaseViewController {
         
         pageControl.currentPage = 0
         bannerTimer()
-        customNavBarRight()
+        customNavBarLeft(title: "가로수길")
         
         filterView.addSubview(myFilterButton)
         let viewModel = MyCustomButtonViewModel(imageName: "settings", title: "필터", borderWidth: 1, borderColor: UIColor.darkGray.cgColor)
         myFilterButton.configure(with: viewModel)
+        
+        filterView.addSubview(myLocationButton)
+        let viewModel1 = MyCustomButtonViewModel(imageName: "add", title: "내 주변", borderWidth: 0, borderColor: UIColor.mainOrange.cgColor)
+        myLocationButton.configure(with: viewModel1)
     }
     
     override func viewDidLayoutSubviews() {
@@ -63,7 +72,7 @@ class SearchViewController: BaseViewController {
     }
     
     func bannerTimer() {
-        let _: Timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { (Timer) in self.bannerMove() }
+        let _: Timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { (Timer) in self.bannerMove() }
     }
     
     func bannerMove() {
@@ -75,8 +84,7 @@ class SearchViewController: BaseViewController {
         }
         nowPage += 1
         bannerCollectionView.scrollToItem(at: NSIndexPath(item: nowPage, section: 0) as IndexPath, at: .right, animated: true)
-        self.pageControl.currentPage = nowPage
-    }
+        self.pageControl.currentPage = nowPage    }
 }
 
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -115,7 +123,7 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if scrollView == bannerCollectionView {
-            let page = Int(targetContentOffset.pointee.x / 410)
+            let page = Int(targetContentOffset.pointee.x / self.view.bounds.width)
             print(page)
             self.pageControl.currentPage = page
             nowPage = page
