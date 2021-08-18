@@ -7,12 +7,13 @@
 
 import UIKit
 
-class PickViewController: UIViewController {
+class PickViewController: BaseViewController {
 
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden
         // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.isHidden = true
     }
 
 

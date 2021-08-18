@@ -53,4 +53,8 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
         
     }
     
+    func setUpMiddleButton() {
+    
+    }
+    
 }

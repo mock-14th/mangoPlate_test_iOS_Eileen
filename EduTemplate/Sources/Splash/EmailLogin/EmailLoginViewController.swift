@@ -25,6 +25,7 @@ class EmailLoginViewController: BaseViewController {
         emailField.setBottomBorder()
         passwordField.setBottomBorder()
         navTitleLeftAlign(title: "이메일로 로그인")
+        navigationController?.navigationBar.tintColor = .mainOrange
     }
     
     override func viewWillDisappear(_ animated: Bool) {

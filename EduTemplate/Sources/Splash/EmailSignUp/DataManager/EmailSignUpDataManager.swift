@@ -14,17 +14,11 @@ class EmailSignUpDataManager {
             .responseDecodable(of: EmailSignUpResponse.self) { response in
                 switch response.result {
                 case .success(let response):
-                    if response.isSuccess, let result = response.message as? String {
-                        viewController.dismissIndicator()
-                        viewController.message = result
-                    }
-                    else {
-                        viewController.dismissIndicator()
-                        viewController.presentAlert(title: response.message)
-                    }
+                    viewController.emailCertify(result: response.isSuccess)
                 case .failure(let error):
-                    viewController.dismissIndicator()
+                    //viewController.dismissIndicator()
                     print(error.localizedDescription)
+                    viewController.emailCertify(result: false)
                 }
             }
     }

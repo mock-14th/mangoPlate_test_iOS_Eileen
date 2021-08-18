@@ -38,7 +38,7 @@ extension UIViewController {
     }
     
     // MARK: 커스텀 UIAction이 뜨는 UIAlertController
-    func presentAlert(title: String, message: String? = nil,
+    /*func presentAlert(title: String, message: String? = nil,
                       isCancelActionIncluded: Bool = false,
                       preferredStyle style: UIAlertController.Style = .alert,
                       with actions: UIAlertAction ...) {
@@ -50,7 +50,7 @@ extension UIViewController {
             alert.addAction(actionCancel)
         }
         self.present(alert, animated: true, completion: nil)
-    }
+    }*/
     
     // MARK: UIWindow의 rootViewController를 변경하여 화면전환
     func changeRootViewController(_ viewControllerToPresent: UIViewController) {
@@ -86,6 +86,46 @@ extension UIViewController {
             make.bottom.equalTo(-6)
             make.leading.equalTo(12)
             make.trailing.equalTo(-12)
+        }
+        
+        alertLabel.text = message
+        alertSuperview.alpha = 1.0
+        alertSuperview.isHidden = false
+        UIView.animate(
+            withDuration: 2.0,
+            delay: 1.0,
+            options: .curveEaseIn,
+            animations: { alertSuperview.alpha = 0 },
+            completion: { _ in
+                alertSuperview.removeFromSuperview()
+            }
+        )
+    }
+    
+    func presentAlert(message: String, target: ConstraintRelatableTarget? = nil, offset: Double? = -12) {
+        let alertSuperview = UIView()
+        alertSuperview.backgroundColor = .mainLightGray
+        alertSuperview.layer.cornerRadius = 5
+        alertSuperview.isHidden = true
+    
+        let alertLabel = UILabel()
+        //alertLabel.font = .NotoSans(.regular, size: 15)
+        alertLabel.font = .systemFont(ofSize: 16, weight: .semibold)
+        alertLabel.textColor = .darkGray
+        
+        self.view.addSubview(alertSuperview)
+        alertSuperview.snp.makeConstraints { make in
+            //make.bottom.equalTo(target ?? self.view.safeAreaLayoutGuide).offset(-12)
+            make.centerY.equalToSuperview()
+            make.centerX.equalToSuperview()
+        }
+        
+        alertSuperview.addSubview(alertLabel)
+        alertLabel.snp.makeConstraints { make in
+            make.top.equalTo(18)
+            make.bottom.equalTo(-18)
+            make.leading.equalTo(18)
+            make.trailing.equalTo(-18)
         }
         
         alertLabel.text = message

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhoneAuthViewController" customModule="EduTemplate" customModuleProvider="target">
+            <connections>
+                <outlet property="nextButton" destination="Te9-YE-oNH" id="7QR-O0-Cll"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50j-SL-5Ij">
+                    <rect key="frame" x="0.0" y="88" width="414" height="714"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="인증번호가 전송되었어요! 상황에 따라 3분 정도 소요될 수 있어요" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tap-jK-b4H">
+                    <rect key="frame" x="25" y="118" width="308" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="308" id="2q2-Ap-TGJ"/>
+                        <constraint firstAttribute="height" constant="50" id="EZq-ln-xzI"/>
+                    </constraints>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="인증번호 입력" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ILa-vW-7O6">
+                    <rect key="frame" x="25" y="198" width="364" height="38"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" name="mainOrange"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="26c-La-AMQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Te9-YE-oNH">
+                    <rect key="frame" x="192" y="824" width="30" height="33"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                    <state key="normal" title="다음">
+                        <color key="titleColor" red="0.90980392160000001" green="0.90980392160000001" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </state>
+                    <connections>
+                        <action selector="nextButton:" destination="-1" eventType="touchUpInside" id="8Le-Hp-M4T"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="mainOrange"/>
+            <constraints>
+                <constraint firstItem="tap-jK-b4H" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="AlX-mA-5CQ"/>
+                <constraint firstItem="tap-jK-b4H" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="G3S-aN-IUx"/>
+                <constraint firstItem="50j-SL-5Ij" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Glq-jU-JaC"/>
+                <constraint firstItem="Te9-YE-oNH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="O1I-3B-0UB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="50j-SL-5Ij" secondAttribute="trailing" id="X9x-hO-Cv3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ILa-vW-7O6" secondAttribute="trailing" constant="25" id="dRb-PB-X3a"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="50j-SL-5Ij" secondAttribute="bottom" constant="60" id="f1L-Zw-te4"/>
+                <constraint firstItem="ILa-vW-7O6" firstAttribute="top" secondItem="tap-jK-b4H" secondAttribute="bottom" constant="30" id="fvj-p2-jbn"/>
+                <constraint firstItem="ILa-vW-7O6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="prL-au-soL"/>
+                <constraint firstItem="50j-SL-5Ij" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="qPg-rf-cTu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Te9-YE-oNH" secondAttribute="bottom" constant="5" id="wdo-TL-Dq3"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <point key="canvasLocation" x="137.68115942028987" y="79.6875"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="mainOrange">
+            <color red="0.96100002527236938" green="0.40000000596046448" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

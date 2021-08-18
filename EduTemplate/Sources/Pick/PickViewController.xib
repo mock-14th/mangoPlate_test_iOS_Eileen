@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PickViewController" customModule="EduTemplate" customModuleProvider="target">
             <connections>
+                <outlet property="segmentedControl" destination="vJk-Tr-xlj" id="Kgw-L1-ZAc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,8 +18,27 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vJk-Tr-xlj">
+                    <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Q9c-qo-cQh"/>
+                    </constraints>
+                    <segments>
+                        <segment title="First"/>
+                        <segment title="Second"/>
+                        <segment title=""/>
+                    </segments>
+                </segmentedControl>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vJk-Tr-xlj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Ayy-NT-dcA"/>
+                <constraint firstItem="vJk-Tr-xlj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cV4-5o-V1h"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vJk-Tr-xlj" secondAttribute="trailing" id="wh4-hu-lLq"/>
+            </constraints>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
             <point key="canvasLocation" x="111.59420289855073" y="79.6875"/>
         </view>
     </objects>
