@@ -30,7 +30,6 @@ class EmailSignUpViewController: BaseViewController {
         if (isEmailCertificated == true) && (isPassword(myPassword: passwordTextField.text!) == true) && (isPasswordMatch() == true) {
             navigationController?.pushViewController(PhoneViewController(), animated: true)
         }
-        
         if isEmailCertificated == false {
             self.presentAlert(message: "이메일 인증이 완료되지 않았습니다.")
         }
@@ -48,7 +47,6 @@ class EmailSignUpViewController: BaseViewController {
         passwordTextField.addTarget(self, action: #selector(passwordTextFieldDidChange(_:)), for: .editingChanged)
         passwordvalidate.addTarget(self, action: #selector(pwvDidChange(_:)), for: .editingChanged)
         
-        // Do any additional setup after loading the view.
         view.backgroundColor = .mainGray
         isEmailCertificated = false
     }

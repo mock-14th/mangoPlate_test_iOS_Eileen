@@ -23,7 +23,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50j-SL-5Ij">
                     <rect key="frame" x="0.0" y="88" width="414" height="714"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="인증번호가 전송되었어요! 상황에 따라 3분 정도 소요될 수 있어요" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tap-jK-b4H">
                     <rect key="frame" x="25" y="118" width="308" height="50"/>
@@ -58,7 +58,7 @@
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" name="mainOrange"/>
+            <color key="backgroundColor" red="0.99709862469999999" green="0.44323140379999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="tap-jK-b4H" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="AlX-mA-5CQ"/>
                 <constraint firstItem="tap-jK-b4H" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="G3S-aN-IUx"/>

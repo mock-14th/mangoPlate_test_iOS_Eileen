@@ -11,11 +11,12 @@ class PhoneAuthViewController: BaseViewController {
 
     @IBOutlet weak var nextButton: UIButton!
     @IBAction func nextButton(_ sender: Any) {
+        navigationController?.pushViewController(SetProfileViewController(), animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = .mainOrange
         // Do any additional setup after loading the view.
     }
     
@@ -28,7 +29,7 @@ class PhoneAuthViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        presentAlert(message: "인증번호를 SMS로 전송했습니다")
+        //presentAlert(message: "인증번호를 SMS로 전송했습니다")
     }
 
     /*

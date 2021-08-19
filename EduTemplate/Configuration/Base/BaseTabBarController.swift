@@ -51,10 +51,26 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
         
         self.delegate = self
         
+        setUpMiddleButton()
+        
     }
     
     func setUpMiddleButton() {
+        let middleButton = UIButton(frame: CGRect(x: self.view.bounds.width / 2 - 20, y: 5, width: 40, height: 40))
+        
+        middleButton.setBackgroundImage(UIImage(named: "centerbutton"), for: .normal)
+        //middleButton.layer.shadowColor = UIColor.black.cgColor
+        //middleButton.layer.shadowOpacity = 0.1
+        //middleButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+        
+        self.tabBar.addSubview(middleButton)
+        middleButton.addTarget(self, action: #selector(menuButtonAction), for: .touchUpInside)
+        
+        self.view.layoutIfNeeded()
+    }
     
+    @objc func menuButtonAction(sender: UIButton) {
+        self.selectedIndex = 2
     }
     
 }

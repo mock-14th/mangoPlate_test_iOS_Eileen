@@ -57,10 +57,6 @@ class BaseViewController: UIViewController {
         label.textAlignment = .left
         
         navigationItem.titleView = label
-        /*if let navigationBar = navigationController?.navigationBar {
-            label.widthAnchor.constraint(equalTo: navigationBar.widthAnchor, constant: -40).isActive = true
-        }*/
-        
     }
     
     func customNavBarLeft2() {

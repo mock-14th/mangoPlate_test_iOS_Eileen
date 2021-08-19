@@ -58,7 +58,7 @@ class MyCustomButton: UIButton {
         
         addSubviews()
         
-        layer.cornerRadius = 15
+        layer.cornerRadius = 16
         layer.borderWidth = viewModel.borderWidth
         layer.borderColor = viewModel.borderColor
     }
@@ -70,6 +70,7 @@ class MyCustomButton: UIButton {
         myTitleLabel.frame = CGRect(x: 34, y: 8, width: 40, height: 30)
         //myTitleLabel.center.y = self.frame.height / 2
         myTitleLabel.sizeToFit()
+        self.frame.size = CGSize(width: 43 + myTitleLabel.frame.width , height: 32)
     }
 }
 
