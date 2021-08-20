@@ -16,6 +16,13 @@ class EmailLoginViewController: BaseViewController {
         navigationController?.pushViewController(EmailSignUpViewController(), animated: true)
     }
     
+    @IBOutlet weak var loginButton: UIButton!
+    @IBAction func loginButton(_ sender: Any) {
+        let input = EmailLoginInput(email: emailField.text!, password: passwordField.text!)
+        EmailLoginDataManager().emailLogin(input, viewController: self)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: false)

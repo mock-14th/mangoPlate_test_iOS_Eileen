@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmailLoginViewController" customModule="EduTemplate" customModuleProvider="target">
             <connections>
                 <outlet property="emailField" destination="DNF-g0-ApJ" id="VWh-1n-hJM"/>
+                <outlet property="loginButton" destination="Glt-E4-rbR" id="ihP-lW-jgV"/>
                 <outlet property="passwordField" destination="M4k-Ro-XEB" id="jEs-IP-qlN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -30,7 +31,7 @@
                         <constraint firstAttribute="height" constant="38" id="v0f-gs-Cgl"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="비밀번호 입력(6~12자)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M4k-Ro-XEB">
                     <rect key="frame" x="25" y="186" width="364" height="38"/>
@@ -39,7 +40,7 @@
                         <constraint firstAttribute="height" constant="38" id="XnH-bG-StC"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Glt-E4-rbR">
                     <rect key="frame" x="92" y="324" width="230" height="48"/>
@@ -56,6 +57,9 @@
                             <real key="value" value="25"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="loginButton:" destination="-1" eventType="touchUpInside" id="IQt-wl-p8e"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxb-NQ-bYR">
                     <rect key="frame" x="227" y="387" width="97" height="27"/>

@@ -114,12 +114,12 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         }
     }
     
-    /*func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if collectionView == self.bannerCollectionView {
-            pageControl.currentPage = indexPath.row
-            nowPage = indexPath.row
-        }
-    }*/
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = RestaurantViewController()
+        vc.modalTransitionStyle = .coverVertical
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if scrollView == bannerCollectionView {

@@ -70,8 +70,12 @@
 		CD7737B826C8EC12002E1C8D /* FoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7737B626C8EC12002E1C8D /* FoodCollectionViewCell.swift */; };
 		CD7737B926C8EC12002E1C8D /* FoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD7737B726C8EC12002E1C8D /* FoodCollectionViewCell.xib */; };
 		CD7737BB26C970AF002E1C8D /* UIBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7737BA26C970AF002E1C8D /* UIBarButton.swift */; };
+		CD7EA26D26CFD83E006CB76A /* ResCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7EA26C26CFD83E006CB76A /* ResCustomButton.swift */; };
 		CDA1A49126CE9B4C00056984 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1A48F26CE9B4C00056984 /* RestaurantViewController.swift */; };
 		CDA1A49226CE9B4C00056984 /* RestaurantViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDA1A49026CE9B4C00056984 /* RestaurantViewController.xib */; };
+		CDA1A49626CEBB4300056984 /* EmailLoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1A49526CEBB4300056984 /* EmailLoginInput.swift */; };
+		CDA1A49826CEBBBF00056984 /* EmailLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1A49726CEBBBF00056984 /* EmailLoginResponse.swift */; };
+		CDA1A49A26CEBCED00056984 /* EmailLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1A49926CEBCED00056984 /* EmailLoginDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -144,8 +148,12 @@
 		CD7737B626C8EC12002E1C8D /* FoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCollectionViewCell.swift; sourceTree = "<group>"; };
 		CD7737B726C8EC12002E1C8D /* FoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodCollectionViewCell.xib; sourceTree = "<group>"; };
 		CD7737BA26C970AF002E1C8D /* UIBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButton.swift; sourceTree = "<group>"; };
+		CD7EA26C26CFD83E006CB76A /* ResCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResCustomButton.swift; sourceTree = "<group>"; };
 		CDA1A48F26CE9B4C00056984 /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
 		CDA1A49026CE9B4C00056984 /* RestaurantViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantViewController.xib; sourceTree = "<group>"; };
+		CDA1A49526CEBB4300056984 /* EmailLoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginInput.swift; sourceTree = "<group>"; };
+		CDA1A49726CEBBBF00056984 /* EmailLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginResponse.swift; sourceTree = "<group>"; };
+		CDA1A49926CEBCED00056984 /* EmailLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,7 +223,6 @@
 			isa = PBXGroup;
 			children = (
 				BD4394F7252E37580055F2E6 /* Constant.swift */,
-				BD7066002545F039005FCCFE /* Certificate */,
 				BD439418252E16B40055F2E6 /* Secret */,
 				BD439419252E16C10055F2E6 /* Font */,
 				BD43941A252E16CB0055F2E6 /* Extension */,
@@ -276,13 +283,6 @@
 				CD7737A526C8B9FF002E1C8D /* BaseTabBarController.swift */,
 			);
 			path = Base;
-			sourceTree = "<group>";
-		};
-		BD7066002545F039005FCCFE /* Certificate */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Certificate;
 			sourceTree = "<group>";
 		};
 		BDB626AE25EF877A00B3867E /* Sources */ = {
@@ -445,6 +445,8 @@
 		CD77379C26C7F3C9002E1C8D /* EmailLogin */ = {
 			isa = PBXGroup;
 			children = (
+				CDA1A49326CEBAF700056984 /* Entity */,
+				CDA1A49426CEBB0200056984 /* DataManager */,
 				CD77379D26C7F45C002E1C8D /* EmailLoginViewController.swift */,
 				CD77379E26C7F45C002E1C8D /* EmailLoginViewController.xib */,
 			);
@@ -498,8 +500,26 @@
 			children = (
 				CDA1A48F26CE9B4C00056984 /* RestaurantViewController.swift */,
 				CDA1A49026CE9B4C00056984 /* RestaurantViewController.xib */,
+				CD7EA26C26CFD83E006CB76A /* ResCustomButton.swift */,
 			);
 			path = Restaurant;
+			sourceTree = "<group>";
+		};
+		CDA1A49326CEBAF700056984 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CDA1A49526CEBB4300056984 /* EmailLoginInput.swift */,
+				CDA1A49726CEBBBF00056984 /* EmailLoginResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CDA1A49426CEBB0200056984 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				CDA1A49926CEBCED00056984 /* EmailLoginDataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -648,16 +668,19 @@
 				BD439422252E17A60055F2E6 /* String.swift in Sources */,
 				BD2FA071252F507E00C93B8B /* KobisKey.swift in Sources */,
 				CD3C5A8126CB947F000CFB1B /* EmailSignUpViewControllerEntity.swift in Sources */,
+				CDA1A49A26CEBCED00056984 /* EmailLoginDataManager.swift in Sources */,
 				BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */,
 				CD3C5A9C26CDF7BA000CFB1B /* UserInfoDataManager.swift in Sources */,
 				BD439437252E1FE40055F2E6 /* BaseViewController.swift in Sources */,
 				CD3C5A9F26CDFBF8000CFB1B /* EatDealViewController.swift in Sources */,
+				CDA1A49826CEBBBF00056984 /* EmailLoginResponse.swift in Sources */,
 				CD3C5AB226CE2CD2000CFB1B /* EatDealTableViewCell.swift in Sources */,
 				BD439431252E1F870055F2E6 /* IndicatorView.swift in Sources */,
 				CD2F0FFC26CA4A73009825EF /* MyInfoViewController.swift in Sources */,
 				BD439428252E1C820055F2E6 /* UIButton.swift in Sources */,
 				CD7737AF26C8CA09002E1C8D /* PickViewController.swift in Sources */,
 				BD4394F8252E37580055F2E6 /* Constant.swift in Sources */,
+				CD7EA26D26CFD83E006CB76A /* ResCustomButton.swift in Sources */,
 				CD7737AA26C8BA9B002E1C8D /* SearchViewController.swift in Sources */,
 				CD7737B426C8E329002E1C8D /* BannerCollectionViewCell.swift in Sources */,
 				CD77379F26C7F45C002E1C8D /* EmailLoginViewController.swift in Sources */,
@@ -677,6 +700,7 @@
 				CD3C5A9526CD617E000CFB1B /* SetProfileViewController.swift in Sources */,
 				CD77379726C7B858002E1C8D /* SplashViewController.swift in Sources */,
 				BD439425252E1BEE0055F2E6 /* Color.swift in Sources */,
+				CDA1A49626CEBB4300056984 /* EmailLoginInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
