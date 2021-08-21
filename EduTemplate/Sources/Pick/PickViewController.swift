@@ -14,6 +14,7 @@ class PickViewController: BaseViewController {
     let topListVC = TopListViewController()
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
     let segmentIndicator: UIView = {
        let v = UIView()
         v.translatesAutoresizingMaskIntoConstraints = false

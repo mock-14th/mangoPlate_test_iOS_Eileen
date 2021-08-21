@@ -1,13 +1,13 @@
 //
-//  MyInfoViewController.swift
+//  MyInfoLogoutViewController.swift
 //  EduTemplate
 //
-//  Created by 권하은 on 2021/08/16.
+//  Created by 권하은 on 2021/08/21.
 //
 
 import UIKit
 
-class MyInfoViewController: UIViewController {
+class MyInfoLogoutViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
