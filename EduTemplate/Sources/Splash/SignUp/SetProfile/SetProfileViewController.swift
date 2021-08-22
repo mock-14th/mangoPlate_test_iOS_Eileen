@@ -8,7 +8,11 @@
 import UIKit
 
 class SetProfileViewController: BaseViewController {
-
+    
+    @IBAction func doneButton(_ sender: Any) {
+        print(UserDefaults.standard.string(forKey: "emailKey")!)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,4 +32,5 @@ class SetProfileViewController: BaseViewController {
         //self.navigationController?.navigationBar.barTintColor = .white
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
+    
 }

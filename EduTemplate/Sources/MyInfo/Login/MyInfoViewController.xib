@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyInfoViewController" customModule="EduTemplate" customModuleProvider="target">
             <connections>
                 <outlet property="infoTableView" destination="OZL-xY-rl8" id="Z0W-O1-CYH"/>
+                <outlet property="tableViewHeight" destination="zG1-ws-Ucd" id="1QD-TK-70f"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -110,6 +111,9 @@
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OZL-xY-rl8">
                                     <rect key="frame" x="0.0" y="196" width="414" height="576"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="576" id="zG1-ws-Ucd"/>
+                                    </constraints>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

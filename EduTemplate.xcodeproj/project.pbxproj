@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		47EC49BAB86B8D082138F45A /* Pods_EduTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA42677DFFF9ECF84A58310C /* Pods_EduTemplate.framework */; };
-		BD2FA071252F507E00C93B8B /* KobisKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2FA070252F507E00C93B8B /* KobisKey.swift */; };
+		BD2FA071252F507E00C93B8B /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2FA070252F507E00C93B8B /* Key.swift */; };
 		BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439400252E13EF0055F2E6 /* AppDelegate.swift */; };
 		BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD439402252E13EF0055F2E6 /* SceneDelegate.swift */; };
 		BD43940A252E13F30055F2E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD439409252E13F30055F2E6 /* Assets.xcassets */; };
@@ -82,6 +82,11 @@
 		CDA1A49A26CEBCED00056984 /* EmailLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1A49926CEBCED00056984 /* EmailLoginDataManager.swift */; };
 		CDE6E0D626D1438C003A405E /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE6E0D426D1438C003A405E /* InfoTableViewCell.swift */; };
 		CDE6E0D726D1438C003A405E /* InfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE6E0D526D1438C003A405E /* InfoTableViewCell.xib */; };
+		CDE6E0DB26D21A92003A405E /* KakaoLoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE6E0DA26D21A92003A405E /* KakaoLoginInput.swift */; };
+		CDE6E0DD26D21B39003A405E /* KakaoLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE6E0DC26D21B39003A405E /* KakaoLoginResponse.swift */; };
+		CDE6E0DF26D21B8B003A405E /* KakaoLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE6E0DE26D21B8B003A405E /* KakaoLoginDataManager.swift */; };
+		CDE6E0E726D26BCD003A405E /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE6E0E526D26BCD003A405E /* NewsTableViewCell.swift */; };
+		CDE6E0E826D26BCD003A405E /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE6E0E626D26BCD003A405E /* NewsTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,7 +95,7 @@
 		994309D534A9AA18B737CB33 /* Pods-EduTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EduTemplate.debug.xcconfig"; path = "Target Support Files/Pods-EduTemplate/Pods-EduTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		AA42677DFFF9ECF84A58310C /* Pods_EduTemplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EduTemplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF8341A6F71D7CAB48DD4751 /* Pods-OsTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OsTemplate.debug.xcconfig"; path = "Target Support Files/Pods-OsTemplate/Pods-OsTemplate.debug.xcconfig"; sourceTree = "<group>"; };
-		BD2FA070252F507E00C93B8B /* KobisKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KobisKey.swift; sourceTree = "<group>"; };
+		BD2FA070252F507E00C93B8B /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		BD4393FD252E13EF0055F2E6 /* EduTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EduTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD439400252E13EF0055F2E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD439402252E13EF0055F2E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +171,11 @@
 		CDA1A49926CEBCED00056984 /* EmailLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginDataManager.swift; sourceTree = "<group>"; };
 		CDE6E0D426D1438C003A405E /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 		CDE6E0D526D1438C003A405E /* InfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTableViewCell.xib; sourceTree = "<group>"; };
+		CDE6E0DA26D21A92003A405E /* KakaoLoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginInput.swift; sourceTree = "<group>"; };
+		CDE6E0DC26D21B39003A405E /* KakaoLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginResponse.swift; sourceTree = "<group>"; };
+		CDE6E0DE26D21B8B003A405E /* KakaoLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginDataManager.swift; sourceTree = "<group>"; };
+		CDE6E0E526D26BCD003A405E /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		CDE6E0E626D26BCD003A405E /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,7 +257,7 @@
 		BD439418252E16B40055F2E6 /* Secret */ = {
 			isa = PBXGroup;
 			children = (
-				BD2FA070252F507E00C93B8B /* KobisKey.swift */,
+				BD2FA070252F507E00C93B8B /* Key.swift */,
 			);
 			path = Secret;
 			sourceTree = "<group>";
@@ -444,11 +454,9 @@
 		CD77379926C7B8BC002E1C8D /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				CDE6E0E126D23988003A405E /* SignUp */,
+				CDE6E0E026D23974003A405E /* KakaoLogin */,
 				CD77379C26C7F3C9002E1C8D /* EmailLogin */,
-				CD3C5A7B26CB8F51000CFB1B /* EmailSignUp */,
-				CD3C5A8826CCAA82000CFB1B /* Phone */,
-				CD3C5A8D26CD253C000CFB1B /* PhoneAuth */,
-				CD3C5A9226CD615D000CFB1B /* SetProfile */,
 				CD77379526C7B858002E1C8D /* SplashViewController.swift */,
 				CD77379626C7B858002E1C8D /* SplashViewController.xib */,
 			);
@@ -503,6 +511,7 @@
 		CD7EA26E26D0ECBD006CB76A /* AllNews */ = {
 			isa = PBXGroup;
 			children = (
+				CDE6E0E426D26BB2003A405E /* Cells */,
 				CD7EA26F26D0ECD4006CB76A /* AllNewsViewController.swift */,
 				CD7EA27026D0ECD4006CB76A /* AllNewsViewController.xib */,
 			);
@@ -568,6 +577,52 @@
 			children = (
 				CDE6E0D426D1438C003A405E /* InfoTableViewCell.swift */,
 				CDE6E0D526D1438C003A405E /* InfoTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CDE6E0E026D23974003A405E /* KakaoLogin */ = {
+			isa = PBXGroup;
+			children = (
+				CDE6E0E226D239CD003A405E /* Entity */,
+				CDE6E0E326D239D4003A405E /* DataManager */,
+			);
+			path = KakaoLogin;
+			sourceTree = "<group>";
+		};
+		CDE6E0E126D23988003A405E /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				CD3C5A7B26CB8F51000CFB1B /* EmailSignUp */,
+				CD3C5A8826CCAA82000CFB1B /* Phone */,
+				CD3C5A8D26CD253C000CFB1B /* PhoneAuth */,
+				CD3C5A9226CD615D000CFB1B /* SetProfile */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		CDE6E0E226D239CD003A405E /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CDE6E0DA26D21A92003A405E /* KakaoLoginInput.swift */,
+				CDE6E0DC26D21B39003A405E /* KakaoLoginResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CDE6E0E326D239D4003A405E /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				CDE6E0DE26D21B8B003A405E /* KakaoLoginDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		CDE6E0E426D26BB2003A405E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CDE6E0E526D26BCD003A405E /* NewsTableViewCell.swift */,
+				CDE6E0E626D26BCD003A405E /* NewsTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -644,6 +699,7 @@
 				CD3C5A9626CD617E000CFB1B /* SetProfileViewController.xib in Resources */,
 				CD3C5A8C26CCAC2F000CFB1B /* PhoneViewController.xib in Resources */,
 				CD3C5A7F26CB8F8C000CFB1B /* EmailSignUpViewController.xib in Resources */,
+				CDE6E0E826D26BCD003A405E /* NewsTableViewCell.xib in Resources */,
 				BD4394A9252E2AE40055F2E6 /* NotoSansCJKkr-Bold.otf in Resources */,
 				CD7EA27826D12F16006CB76A /* MyInfoLogoutViewController.xib in Resources */,
 				CD7737AB26C8BA9B002E1C8D /* SearchViewController.xib in Resources */,
@@ -710,6 +766,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD3C5AA626CDFECF000CFB1B /* StoryViewController.swift in Sources */,
+				CDE6E0DB26D21A92003A405E /* KakaoLoginInput.swift in Sources */,
 				BD439434252E1FBD0055F2E6 /* Device.swift in Sources */,
 				CD7737B826C8EC12002E1C8D /* FoodCollectionViewCell.swift in Sources */,
 				BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */,
@@ -719,7 +776,7 @@
 				CD7737A626C8B9FF002E1C8D /* BaseTabBarController.swift in Sources */,
 				CD3C5A8326CB9597000CFB1B /* EmailSignUpDataManager.swift in Sources */,
 				BD439422252E17A60055F2E6 /* String.swift in Sources */,
-				BD2FA071252F507E00C93B8B /* KobisKey.swift in Sources */,
+				BD2FA071252F507E00C93B8B /* Key.swift in Sources */,
 				CD3C5A8126CB947F000CFB1B /* EmailSignUpViewControllerEntity.swift in Sources */,
 				CDA1A49A26CEBCED00056984 /* EmailLoginDataManager.swift in Sources */,
 				BD439403252E13EF0055F2E6 /* SceneDelegate.swift in Sources */,
@@ -728,6 +785,7 @@
 				CD3C5A9F26CDFBF8000CFB1B /* EatDealViewController.swift in Sources */,
 				CDA1A49826CEBBBF00056984 /* EmailLoginResponse.swift in Sources */,
 				CD3C5AB226CE2CD2000CFB1B /* EatDealTableViewCell.swift in Sources */,
+				CDE6E0DD26D21B39003A405E /* KakaoLoginResponse.swift in Sources */,
 				BD439431252E1F870055F2E6 /* IndicatorView.swift in Sources */,
 				CD2F0FFC26CA4A73009825EF /* MyInfoViewController.swift in Sources */,
 				BD439428252E1C820055F2E6 /* UIButton.swift in Sources */,
@@ -737,7 +795,9 @@
 				CD7737AA26C8BA9B002E1C8D /* SearchViewController.swift in Sources */,
 				CD7737B426C8E329002E1C8D /* BannerCollectionViewCell.swift in Sources */,
 				CD77379F26C7F45C002E1C8D /* EmailLoginViewController.swift in Sources */,
+				CDE6E0E726D26BCD003A405E /* NewsTableViewCell.swift in Sources */,
 				CD3C5AAA26CDFEF3000CFB1B /* TopListViewController.swift in Sources */,
+				CDE6E0DF26D21B8B003A405E /* KakaoLoginDataManager.swift in Sources */,
 				CD3C5A9926CDF6D1000CFB1B /* UserInfoResponse.swift in Sources */,
 				BD43941F252E17330055F2E6 /* Date.swift in Sources */,
 				CD2F0FF726CA49D8009825EF /* PlusViewController.swift in Sources */,

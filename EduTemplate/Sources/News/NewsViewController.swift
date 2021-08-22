@@ -34,8 +34,7 @@ class NewsViewController: BaseViewController {
         
         allnewsVC.didMove(toParent: self)
         
-        allnewsVC.view.frame = CGRect(x: 0, y: 94, width: self.view.bounds.width, height: self.view.bounds.height - 94)
-        
+        allnewsVC.view.frame = CGRect(x: 0, y: 44, width: self.view.bounds.width, height: self.view.bounds.height - 44)
         allnewsVC.view.isHidden = false
     }
 

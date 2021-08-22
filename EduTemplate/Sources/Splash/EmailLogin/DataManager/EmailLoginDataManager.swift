@@ -19,7 +19,6 @@ class EmailLoginDataManager {
                 case .failure(let error):
                     //viewController.dismissIndicator()
                     print(error.localizedDescription)
-                    
                 }
             }
     }

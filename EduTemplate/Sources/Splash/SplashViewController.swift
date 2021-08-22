@@ -37,15 +37,21 @@ class SplashViewController: BaseViewController {
             else {
                 print("loginWithKakaoAccount() success.")
                 
-                let vc = BaseTabBarController()
+                let input = KakaoLoginInput(accessToken: oauthToken!.accessToken)
+                KakaoLoginDataManager().kakaoLogin(input, viewController: self)
+                
+                /*let vc = BaseTabBarController()
                 vc.modalPresentationStyle = .fullScreen
                 vc.modalTransitionStyle = .crossDissolve
                 
-                self.present(vc, animated: true)
+                self.present(vc, animated: true)*/
                 
                 _ = oauthToken
             }
         }
+        
+        
+        
     }
     
     @IBAction func EmailLoginButton(_ sender: Any) {

@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // StatusBar에 Alamofire 시도 중 Indicator 띄워주기 위한 옵션 설정
         NetworkActivityIndicatorManager.shared.isEnabled = true
         
-        KakaoSDKCommon.initSDK(appKey: KobisKey.KAKAO_NATIVE_KEY)
+        KakaoSDKCommon.initSDK(appKey: KakaoKey.KAKAO_NATIVE_KEY)
         
         return true
     }

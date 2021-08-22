@@ -9,7 +9,8 @@ import UIKit
 
 class EmailSignUpViewController: BaseViewController {
     
-    //var message = ""
+    var userEmail: String = ""
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var messageLabel: UILabel!
     
@@ -33,6 +34,7 @@ class EmailSignUpViewController: BaseViewController {
         if isEmailCertificated == false {
             self.presentAlert(message: "이메일 인증이 완료되지 않았습니다.")
         }
+        
     }
     
     var isEmailCertificated: Bool = false
@@ -81,6 +83,7 @@ class EmailSignUpViewController: BaseViewController {
             messageLabel.text = ""
             self.presentAlert(message: "요청하신 이메일 주소로 인증 메일을 전송했습니다.")
             isEmailCertificated = true
+            UserDefaults.standard.set(testStr, forKey: "emailKey")
         }
         else  {
             messageLabel.text = "잘못된 메일주소입니다. 다시 입력해주세요."
