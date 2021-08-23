@@ -19,19 +19,21 @@ class SearchViewController: BaseViewController {
     @IBOutlet weak var filterView: UIView!
     
     private let myLocationButton: MyCustomButton = {
-        let button = MyCustomButton(frame: CGRect(x: 245, y: 10, width: 80, height: 32))
+        let button = MyCustomButton(frame: CGRect(x: 245, y: 7, width: 80, height: 32))
         button.backgroundColor = .mainLightGray
         button.tintColor = .mainOrange
         return button
     }()
-    
     private let myFilterButton: MyCustomButton = {
-        let button = MyCustomButton(frame: CGRect(x: 338, y: 10, width: 65, height: 32))
+        let button = MyCustomButton(frame: CGRect(x: 338, y: 7, width: 65, height: 32))
         button.backgroundColor = .white
         button.tintColor = .darkGray
         return button
     }()
     
+    var restaurantList: [SearchResult] = []
+    
+    //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,7 +58,7 @@ class SearchViewController: BaseViewController {
         
         pageControl.currentPage = 0
         bannerTimer()
-        customNavBarLeft(title: "가로수길")
+        customNavBarLeft(title: "성남시")
         
         filterView.addSubview(myFilterButton)
         let viewModel = MyCustomButtonViewModel(imageName: "settings", title: "필터", borderWidth: 1, borderColor: UIColor.darkGray.cgColor)
@@ -65,6 +67,14 @@ class SearchViewController: BaseViewController {
         filterView.addSubview(myLocationButton)
         let viewModel1 = MyCustomButtonViewModel(imageName: "add", title: "내 주변", borderWidth: 0, borderColor: UIColor.mainOrange.cgColor)
         myLocationButton.configure(with: viewModel1)
+        //myLocationButton.addTarget(self, action: #selector(locationAction), for: .touchUpInside)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        showIndicator()
+        SearchViewDataManager().getRestaurant(area: "성남시", viewController: self)
     }
     
     override func viewDidLayoutSubviews() {
@@ -98,7 +108,7 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
             return 3
         }
         else {
-            return 50
+            return restaurantList.count
         }
     }
     
@@ -109,16 +119,32 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         }
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FoodCollectionViewCell", for: indexPath) as! FoodCollectionViewCell
-            cell.placeNameLabel.text = String(indexPath.row + 1) + ". 맛집 이름"
+            cell.placeNameLabel.text = String(indexPath.row + 1) + ". " + restaurantList[indexPath.row].name
+            
+            let url = URL(string: restaurantList[indexPath.row].imageUrl)
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: url!)
+                DispatchQueue.main.async {
+                    cell.foodImg.image = UIImage(data: data!)
+                }
+            }
+            
+            cell.placeAreaLabel.text = restaurantList[indexPath.row].area
+            cell.ratingLabel.text = restaurantList[indexPath.row].rating
+            cell.viewsLabel.text = String(restaurantList[indexPath.row].views)
+            cell.reviewsLabel.text = String(restaurantList[indexPath.row].reviews)
+            
             return cell
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = RestaurantViewController()
-        vc.modalTransitionStyle = .coverVertical
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true, completion: nil)
+        if collectionView == foodCollectionView {
+            let vc = RestaurantViewController()
+            vc.modalTransitionStyle = .coverVertical
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+        }
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
@@ -130,4 +156,17 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         }
     }
     
+}
+
+extension SearchViewController {
+    func didRetrieveRestaurants(_ result: [SearchResult]){
+        self.dismissIndicator()
+        self.restaurantList = result
+        self.foodCollectionView.reloadData()
+    }
+    
+    func failedToRequest(message: String) {
+        dismissIndicator()
+        presentAlert(message: message)
+    }
 }

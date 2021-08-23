@@ -12,7 +12,7 @@ struct EmailLoginResponse: Decodable {
     var result: EmailLoginResult?
 }
 
-struct EmailLoginResult: Decodable{
+struct EmailLoginResult: Decodable {
     var userId: Int
     var jwt: String
 }

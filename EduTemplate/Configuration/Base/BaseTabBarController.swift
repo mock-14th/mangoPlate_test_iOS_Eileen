@@ -37,7 +37,6 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
         
         searchTabBarItem.imageInsets = UIEdgeInsets(top: 14, left: 16, bottom: 15, right: 16)
         pickTabBarItem.imageInsets = UIEdgeInsets(top: 14, left: 15, bottom: 13, right: 15)
-        //pickTabBarItem.imageInsets = UIEdgeInsets(top: 14, left: 15, bottom: 13, right: 15)
         newsTabBarItem.imageInsets = UIEdgeInsets(top: 14, left: 18, bottom: 11, right: 18)
         myInfoTabBarItem.imageInsets = UIEdgeInsets(top: 14, left: 16, bottom: 15, right: 16)
         

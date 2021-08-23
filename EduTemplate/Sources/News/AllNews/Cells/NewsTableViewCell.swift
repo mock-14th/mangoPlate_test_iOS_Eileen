@@ -11,16 +11,24 @@ class NewsTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
     
     @IBOutlet weak var pictureCollectionView: UICollectionView!
     
+    @IBOutlet weak var pageLabel: UILabel!
+    
+    @IBOutlet weak var reviewLabel: UILabel!
+    @IBOutlet weak var reviewLabelHeight: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         pictureCollectionView.delegate = self
         pictureCollectionView.dataSource = self
+        pictureCollectionView.register(UINib(nibName: "PictureCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PictureCollectionViewCell")
+        
+        let reviewHeight = reviewLabel.sizeThatFits(CGSize(width: reviewLabel.frame.width, height: CGFloat.greatestFiniteMagnitude))
+        self.reviewLabelHeight.constant = reviewHeight.height
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
         // Configure the view for the selected state
     }
     
@@ -29,7 +37,17 @@ class NewsTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PictureCollectionViewCell", for: indexPath) as! PictureCollectionViewCell
+        
+        return cell
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        if scrollView == pictureCollectionView {
+            let page = Int(targetContentOffset.pointee.x / self.pictureCollectionView.bounds.width)
+            
+            pageLabel.text = String(page+1) + "/5"
+        }
     }
     
     override func layoutSubviews() {

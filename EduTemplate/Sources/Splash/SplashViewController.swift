@@ -45,6 +45,7 @@ class SplashViewController: BaseViewController {
                 vc.modalTransitionStyle = .crossDissolve
                 
                 self.present(vc, animated: true)*/
+                print(oauthToken?.accessToken, "액세스 토큰")
                 
                 _ = oauthToken
             }

@@ -16,7 +16,6 @@ class EmailSignUpDataManager {
                 case .success(let response):
                     viewController.emailCertify(result: response.isSuccess)
                 case .failure(let error):
-                    //viewController.dismissIndicator()
                     print(error.localizedDescription)
                     viewController.emailCertify(result: false)
                 }

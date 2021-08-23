@@ -11,7 +11,11 @@ class FoodCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var foodImg: UIImageView!
     @IBOutlet weak var placeNameLabel: UILabel!
+    @IBOutlet weak var placeAreaLabel: UILabel!
     
+    @IBOutlet weak var viewsLabel: UILabel!
+    @IBOutlet weak var reviewsLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

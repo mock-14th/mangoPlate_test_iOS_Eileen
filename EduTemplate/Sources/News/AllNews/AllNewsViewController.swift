@@ -18,7 +18,9 @@ class AllNewsViewController: UIViewController {
         allnewsTableView.dataSource = self
         allnewsTableView.backgroundColor = UIColor(hex: 0xeeeeee)
         allnewsTableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: "NewsTableViewCell")
+        allnewsTableView.register(UINib(nibName: "NewsButtonTableViewCell", bundle: nil), forCellReuseIdentifier: "NewsButtonTableViewCell")
         allnewsTableView.separatorStyle = .none
+        allnewsTableView.rowHeight = UITableView.automaticDimension
     }
 }
 
@@ -29,9 +31,16 @@ extension AllNewsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell") as! NewsTableViewCell
-        cell.backgroundColor = UIColor(hex: 0xeeeeee)
-        return cell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NewsButtonTableViewCell") as! NewsButtonTableViewCell
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell") as! NewsTableViewCell
+            cell.backgroundColor = UIColor(hex: 0xeeeeee)
+            return cell
+        }
+        
     }
     
 }
