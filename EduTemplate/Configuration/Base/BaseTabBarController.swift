@@ -69,7 +69,12 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     @objc func menuButtonAction(sender: UIButton) {
-        self.selectedIndex = 2
+        //self.selectedIndex = 2
+        let plusNavController = UINavigationController(rootViewController: plusViewController)
+        plusNavController.modalPresentationStyle = .fullScreen
+        plusNavController.modalTransitionStyle = .crossDissolve
+        plusNavController.navigationController?.setNavigationBarHidden(true, animated: false)
+        present(plusNavController, animated: true, completion: nil)
     }
     
 }

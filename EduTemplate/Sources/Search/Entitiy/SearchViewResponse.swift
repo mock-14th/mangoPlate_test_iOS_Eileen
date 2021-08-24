@@ -14,6 +14,7 @@ struct SearchViewResponse: Decodable {
 
 struct SearchResult: Decodable {
     var number: Int
+    var id: Int
     var name: String
     var area: String
     var imageUrl: String

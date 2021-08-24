@@ -6,7 +6,7 @@
 //
 
 struct UserInfoResponse: Decodable {
-    var isSuccess: String
+    var isSuccess: Bool
     var code: Int
-    var message: Bool
+    var message: String
 }

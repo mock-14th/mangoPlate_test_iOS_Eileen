@@ -22,17 +22,18 @@ class EmailLoginViewController: BaseViewController {
         EmailLoginDataManager().emailLogin(input, viewController: self)
     }
     
+    @IBAction func backButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.setNavigationBarHidden(true, animated: false)
         //navigationController?.navigationBar.isTranslucent = false
         // Do any additional setup after loading the view.
         
         emailField.setBottomBorder()
         passwordField.setBottomBorder()
-        navTitleLeftAlign(title: "이메일로 로그인")
-        navigationController?.navigationBar.tintColor = .mainOrange
     }
     
     override func viewWillDisappear(_ animated: Bool) {

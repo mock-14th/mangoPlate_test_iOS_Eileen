@@ -12,12 +12,18 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RestaurantViewController" customModule="EduTemplate" customModuleProvider="target">
             <connections>
                 <outlet property="ItemView" destination="0Jz-dC-GXV" id="7C1-HZ-nKf"/>
+                <outlet property="addressLabel" destination="3eo-22-QxD" id="yTt-VJ-HUS"/>
                 <outlet property="buttonView" destination="RhP-QK-hi3" id="twr-e0-is0"/>
                 <outlet property="downButton" destination="Cs4-vO-Xkx" id="dJd-th-dWq"/>
+                <outlet property="foodPictureCollectionView" destination="kKq-aT-Dag" id="yIJ-zk-fAP"/>
                 <outlet property="mapButtonView" destination="Eay-yT-fVl" id="9ba-Wk-Sxe"/>
                 <outlet property="myScrollView" destination="fJl-FB-3Yu" id="ioI-hz-rrG"/>
+                <outlet property="nameLabel" destination="ldc-TX-dbQ" id="DNg-Bv-T7Y"/>
+                <outlet property="reviewsLabel" destination="NcD-44-W7Z" id="2WF-ou-nId"/>
+                <outlet property="titleLabel" destination="Hpb-xg-dtw" id="not-9E-am8"/>
                 <outlet property="topBar" destination="wA4-lD-OMa" id="aR8-o9-F9o"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewsLabel" destination="Gaz-fC-kOV" id="Izc-0v-SLJ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -105,73 +111,28 @@
                                                 <constraint firstItem="64f-zo-SCd" firstAttribute="top" secondItem="ldc-TX-dbQ" secondAttribute="bottom" constant="5" id="woN-go-9aZ"/>
                                             </constraints>
                                         </view>
-                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9UI-CJ-e4Y">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="kKq-aT-Dag">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="qBK-7v-eBb">
-                                                    <rect key="frame" x="0.0" y="0.0" width="762" height="150"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goR-C2-GOG">
-                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="150" id="EKt-Sf-Vnl"/>
-                                                                <constraint firstAttribute="width" constant="150" id="fmB-Ww-c6q"/>
-                                                            </constraints>
-                                                            <state key="normal" title="Button" image="food"/>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sqa-Tb-CWi">
-                                                            <rect key="frame" x="153" y="0.0" width="150" height="150"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="150" id="jgf-Kh-RlA"/>
-                                                                <constraint firstAttribute="height" constant="150" id="r4o-XB-ydE"/>
-                                                            </constraints>
-                                                            <state key="normal" title="Button" image="food"/>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQC-xd-8He">
-                                                            <rect key="frame" x="306" y="0.0" width="150" height="150"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="150" id="NCz-hI-ldf"/>
-                                                                <constraint firstAttribute="height" constant="150" id="oaq-NK-Zqa"/>
-                                                            </constraints>
-                                                            <state key="normal" title="Button" image="food"/>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Uk-H5-FuW">
-                                                            <rect key="frame" x="459" y="0.0" width="150" height="150"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="150" id="eUX-aV-BrE"/>
-                                                                <constraint firstAttribute="width" constant="150" id="uee-mS-SKL"/>
-                                                            </constraints>
-                                                            <state key="normal" title="Button" image="food"/>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6D-11-1Pv">
-                                                            <rect key="frame" x="612" y="0.0" width="150" height="150"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="150" id="OmL-de-mbY"/>
-                                                                <constraint firstAttribute="width" constant="150" id="hCB-6J-u6b"/>
-                                                            </constraints>
-                                                            <state key="normal" title="Button" image="food"/>
-                                                        </button>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </stackView>
-                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="qBK-7v-eBb" secondAttribute="trailing" id="GF7-Wr-z7S"/>
-                                                <constraint firstItem="qBK-7v-eBb" firstAttribute="top" secondItem="9UI-CJ-e4Y" secondAttribute="top" id="KKC-Sa-SnE"/>
-                                                <constraint firstAttribute="bottom" secondItem="qBK-7v-eBb" secondAttribute="bottom" id="Naq-2V-AQK"/>
-                                                <constraint firstItem="qBK-7v-eBb" firstAttribute="leading" secondItem="9UI-CJ-e4Y" secondAttribute="leading" id="bgb-dX-7cg"/>
-                                                <constraint firstItem="qBK-7v-eBb" firstAttribute="height" secondItem="9UI-CJ-e4Y" secondAttribute="height" id="zBy-jF-o8h"/>
+                                                <constraint firstAttribute="height" constant="150" id="lPV-i3-Lrq"/>
                                             </constraints>
-                                        </scrollView>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="Kee-Yg-pqh">
+                                                <size key="itemSize" width="150" height="150"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                        </collectionView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="9UI-CJ-e4Y" firstAttribute="leading" secondItem="9DL-9u-gKX" secondAttribute="leading" id="1WA-i5-EI9"/>
+                                        <constraint firstItem="kKq-aT-Dag" firstAttribute="leading" secondItem="9DL-9u-gKX" secondAttribute="leading" id="135-ya-er8"/>
                                         <constraint firstItem="YXQ-l7-1Kg" firstAttribute="leading" secondItem="9DL-9u-gKX" secondAttribute="leading" id="8Ui-MR-P5O"/>
                                         <constraint firstAttribute="bottom" secondItem="YXQ-l7-1Kg" secondAttribute="bottom" id="8g3-Ux-1ak"/>
-                                        <constraint firstItem="YXQ-l7-1Kg" firstAttribute="top" secondItem="9UI-CJ-e4Y" secondAttribute="bottom" id="IAY-nj-uku"/>
-                                        <constraint firstAttribute="trailing" secondItem="9UI-CJ-e4Y" secondAttribute="trailing" id="LJS-wg-tNC"/>
-                                        <constraint firstItem="9UI-CJ-e4Y" firstAttribute="top" secondItem="9DL-9u-gKX" secondAttribute="top" id="StK-hS-3wo"/>
+                                        <constraint firstItem="kKq-aT-Dag" firstAttribute="top" secondItem="9DL-9u-gKX" secondAttribute="top" id="EpS-S6-WD4"/>
+                                        <constraint firstItem="YXQ-l7-1Kg" firstAttribute="top" secondItem="kKq-aT-Dag" secondAttribute="bottom" id="I9v-vl-ZJc"/>
+                                        <constraint firstAttribute="trailing" secondItem="kKq-aT-Dag" secondAttribute="trailing" id="lHv-nb-TUO"/>
                                         <constraint firstAttribute="trailing" secondItem="YXQ-l7-1Kg" secondAttribute="trailing" id="nwP-kH-9Di"/>
                                     </constraints>
                                 </view>
@@ -398,7 +359,6 @@
     <resources>
         <image name="downbutton" width="32" height="32"/>
         <image name="eye.fill" catalog="system" width="128" height="78"/>
-        <image name="food" width="828" height="828"/>
         <image name="pencil" width="24" height="24"/>
         <image name="phone.connection" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">

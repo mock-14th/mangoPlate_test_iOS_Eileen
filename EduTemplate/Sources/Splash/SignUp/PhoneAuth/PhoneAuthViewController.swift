@@ -9,21 +9,31 @@ import UIKit
 
 class PhoneAuthViewController: BaseViewController {
 
+    @IBAction func backButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    @IBAction func closeButton(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
     @IBOutlet weak var nextButton: UIButton!
     @IBAction func nextButton(_ sender: Any) {
         navigationController?.pushViewController(SetProfileViewController(), animated: true)
     }
     
+    @IBOutlet weak var authTextField: UITextField!
+    
+    //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .mainOrange
-        // Do any additional setup after loading the view.
+        
+        authTextField.setBottomBorder()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: false)
-        navTitleLeftAlign(title: "휴대폰 번호 인증")
+        navigationController?.setNavigationBarHidden(true, animated: false)
         
     }
     
@@ -31,15 +41,5 @@ class PhoneAuthViewController: BaseViewController {
         super.viewDidAppear(animated)
         //presentAlert(message: "인증번호를 SMS로 전송했습니다")
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

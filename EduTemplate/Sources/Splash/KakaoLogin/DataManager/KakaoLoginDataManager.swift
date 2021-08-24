@@ -16,7 +16,6 @@ class KakaoLoginDataManager {
                 switch response.result {
                 case .success(let response):
                     print(response.message)
-                    print("성공!!!!!!!!")
                 case .failure(let error):
                     //viewController.dismissIndicator()
                     print(error.localizedDescription)

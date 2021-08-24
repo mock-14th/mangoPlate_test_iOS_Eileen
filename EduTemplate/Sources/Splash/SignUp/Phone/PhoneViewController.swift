@@ -8,11 +8,19 @@
 import UIKit
 
 class PhoneViewController: BaseViewController {
-
+    
+    @IBAction func backButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    @IBAction func closeButton(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
     @IBOutlet weak var phoneTextField: UITextField!
     
     @IBOutlet weak var nextButton: UIButton!
     @IBAction func nextButton(_ sender: Any) {
+        UserDefaults.standard.set(phoneTextField.text, forKey: "phoneKey")
         navigationController?.pushViewController(PhoneAuthViewController(), animated: true)
     }
     
@@ -38,7 +46,7 @@ class PhoneViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.setNavigationBarHidden(true, animated: false)
         navTitleLeftAlign(title: "휴대폰 번호 인증")
     }
 

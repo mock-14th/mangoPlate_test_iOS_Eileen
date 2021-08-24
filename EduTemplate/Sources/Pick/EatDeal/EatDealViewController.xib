@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EatDealViewController" customModule="EduTemplate" customModuleProvider="target">
             <connections>
+                <outlet property="buttonView" destination="cj6-sW-eAB" id="BWj-Ab-jUp"/>
                 <outlet property="eatDealTableView" destination="SVn-ty-WcM" id="hbf-9F-JeP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -53,7 +54,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cj6-sW-eAB">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                     <viewLayoutGuide key="safeArea" id="jwp-2N-yx9"/>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.84785150186905001" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="Wq4-65-Qoh"/>
                     </constraints>

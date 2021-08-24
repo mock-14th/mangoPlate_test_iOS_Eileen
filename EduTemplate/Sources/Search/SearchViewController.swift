@@ -59,6 +59,7 @@ class SearchViewController: BaseViewController {
         pageControl.currentPage = 0
         bannerTimer()
         customNavBarLeft(title: "성남시")
+        customNavBarRight()
         
         filterView.addSubview(myFilterButton)
         let viewModel = MyCustomButtonViewModel(imageName: "settings", title: "필터", borderWidth: 1, borderColor: UIColor.darkGray.cgColor)
@@ -71,9 +72,8 @@ class SearchViewController: BaseViewController {
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        showIndicator()
         SearchViewDataManager().getRestaurant(area: "성남시", viewController: self)
     }
     
@@ -121,13 +121,16 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FoodCollectionViewCell", for: indexPath) as! FoodCollectionViewCell
             cell.placeNameLabel.text = String(indexPath.row + 1) + ". " + restaurantList[indexPath.row].name
             
-            let url = URL(string: restaurantList[indexPath.row].imageUrl)
+            /*let url = URL(string: restaurantList[indexPath.row].imageUrl)
             DispatchQueue.global().async {
                 let data = try? Data(contentsOf: url!)
                 DispatchQueue.main.async {
                     cell.foodImg.image = UIImage(data: data!)
                 }
-            }
+            }*/
+            let url = URL(string: restaurantList[indexPath.row].imageUrl)
+            let data = try? Data(contentsOf: url!)
+            cell.foodImg.image = UIImage(data: data!)
             
             cell.placeAreaLabel.text = restaurantList[indexPath.row].area
             cell.ratingLabel.text = restaurantList[indexPath.row].rating
@@ -143,6 +146,7 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
             let vc = RestaurantViewController()
             vc.modalTransitionStyle = .coverVertical
             vc.modalPresentationStyle = .fullScreen
+            vc.restaurantId = restaurantList[indexPath.row].id
             self.present(vc, animated: true, completion: nil)
         }
     }

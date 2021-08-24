@@ -9,6 +9,9 @@ import UIKit
 
 class RestaurantViewController: BaseViewController {
 
+    var restaurantId: Int = 0
+    
+    @IBOutlet weak var foodPictureCollectionView: UICollectionView!
     @IBOutlet weak var topBar: UIView!
     
     @IBOutlet weak var myScrollView: UIScrollView!
@@ -76,6 +79,16 @@ class RestaurantViewController: BaseViewController {
         return button
     }()
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var viewsLabel: UILabel!
+    @IBOutlet weak var reviewsLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    
+    var imageString: String = ""
+    var imageList: [String] = []
+    
+    //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         myScrollView.delegate = self
@@ -85,6 +98,86 @@ class RestaurantViewController: BaseViewController {
         downButton.setImage(UIImage(named: "downbutton")?.withRenderingMode(.alwaysTemplate), for: .normal)
         downButton.tintColor = .orange
         addButtons()
+        
+        foodPictureCollectionView.delegate = self
+        foodPictureCollectionView.dataSource = self
+        foodPictureCollectionView.register(UINib(nibName: "RestaurantCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "RestaurantCollectionViewCell")
+    }
+    
+    //MARK: viewWillAppear
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        showIndicator()
+        RestaurantDetailDataManager().getRestaurantDetail(id: restaurantId, viewController: self)
+    }
+    
+    
+}
+
+extension RestaurantViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if imageString != "" {
+            return imageList.count
+        }
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RestaurantCollectionViewCell", for: indexPath) as! RestaurantCollectionViewCell
+        
+        if imageString != "" {
+            if indexPath.row < imageList.count {
+                let url = URL(string: imageList[indexPath.row])
+                let data = try? Data(contentsOf: url!)
+                cell.restaurantImageView.image = UIImage(data: data!)
+            }
+        }
+       
+        return cell
+    }
+    
+    
+}
+
+extension RestaurantViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == myScrollView {
+            if scrollView.contentOffset.y >= 237 {
+                buttonView.isHidden = false
+                downButton.tintColor = .white
+                topBar.alpha = 0
+            }
+            else {
+                buttonView.isHidden = true
+            }
+            
+            if scrollView.contentOffset.y >= 150 {
+                topBar.alpha = 1 - (scrollView.contentOffset.y - 150) / 87
+            }
+            else {
+                topBar.alpha = 1
+                downButton.tintColor = .mainOrange
+            }
+        }
+    }
+}
+
+extension RestaurantViewController {
+    func didRetrieveRestaurantDetail(_ result: [DetailResult]){
+        self.dismissIndicator()
+        titleLabel.text = result[0].name
+        nameLabel.text = result[0].name
+        viewsLabel.text = String(result[0].views ?? 0)
+        reviewsLabel.text = String(result[0].reviews ?? 0)
+        addressLabel.text = result[0].address
+        imageString = result[0].imageUrl ?? ""
+        imageList = imageString.components(separatedBy: ",")
+        foodPictureCollectionView.reloadData()
+    }
+    
+    func failedToRequest(message: String) {
+        dismissIndicator()
+        presentAlert(message: message)
     }
     
     func addButtons() {
@@ -141,27 +234,4 @@ class RestaurantViewController: BaseViewController {
         myCopyButton.configure(with: viewModel8)
     }
 
-}
-
-extension RestaurantViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView == myScrollView {
-            if scrollView.contentOffset.y >= 237 {
-                buttonView.isHidden = false
-                downButton.tintColor = .white
-                topBar.alpha = 0
-            }
-            else {
-                buttonView.isHidden = true
-            }
-            
-            if scrollView.contentOffset.y >= 150 {
-                topBar.alpha = 1 - (scrollView.contentOffset.y - 150) / 87
-            }
-            else {
-                topBar.alpha = 1
-                downButton.tintColor = .mainOrange
-            }
-        }
-    }
 }

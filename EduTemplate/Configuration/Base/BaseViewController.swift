@@ -59,12 +59,24 @@ class BaseViewController: UIViewController {
         navigationItem.titleView = label
     }
     
-    func customNavBarLeft2() {
-        
-    }
-    
     func customNavBarRight() {
+        let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 65, height: 70))
         
+        let searchButton = UIButton(frame: CGRect(x: 0, y: 8, width: 25, height: 25))
+        searchButton.setImage(UIImage(named: "searchbutton"), for: .normal)
+        searchButton.adjustsImageWhenHighlighted = false
+        
+        let separatorView = UIView(frame: CGRect(x: 35, y: 5, width: 0.8, height: 30))
+        separatorView.backgroundColor = UIColor(hex: 0xdddddd)
+        
+        let mapButton = UIButton(frame: CGRect(x: 45, y: 8, width: 25, height: 25))
+        mapButton.setImage(UIImage(named: "mapbutton"), for: .normal)
+        mapButton.adjustsImageWhenHighlighted = false
+        
+        containerView.addSubview(searchButton)
+        containerView.addSubview(separatorView)
+        containerView.addSubview(mapButton)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: containerView)
     }
     
     

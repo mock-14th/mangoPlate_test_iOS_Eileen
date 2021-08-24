@@ -9,6 +9,13 @@ import UIKit
 
 class EmailSignUpViewController: BaseViewController {
     
+    @IBAction func backButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    @IBAction func closeButton(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
     var userEmail: String = ""
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -29,6 +36,7 @@ class EmailSignUpViewController: BaseViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBAction func nextButton(_ sender: Any) {
         if (isEmailCertificated == true) && (isPassword(myPassword: passwordTextField.text!) == true) && (isPasswordMatch() == true) {
+            UserDefaults.standard.set(passwordTextField.text, forKey: "passwordKey")
             navigationController?.pushViewController(PhoneViewController(), animated: true)
         }
         if isEmailCertificated == false {
@@ -55,8 +63,7 @@ class EmailSignUpViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: false)
-        navTitleLeftAlign(title: "이메일로 가입")
+        navigationController?.setNavigationBarHidden(true, animated: false)
 
     }
     

@@ -27,7 +27,7 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WyR-Mq-tkp">
-                    <rect key="frame" x="100" y="504" width="214" height="39.5"/>
+                    <rect key="frame" x="100" y="494" width="214" height="39.5"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="WyR-Mq-tkp" secondAttribute="height" multiplier="457:84" id="FeU-zu-Khd"/>
                     </constraints>
@@ -37,7 +37,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lr-IZ-0Cz">
-                    <rect key="frame" x="100" y="553.5" width="214" height="39"/>
+                    <rect key="frame" x="100" y="567" width="214" height="39"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="2lr-IZ-0Cz" secondAttribute="height" multiplier="457:84" id="5DN-8l-t6I"/>
                     </constraints>
@@ -63,18 +63,111 @@
                         <action selector="skipButton:" destination="-1" eventType="touchUpInside" id="qph-fQ-Z0w"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsR-LY-u2b">
+                    <rect key="frame" x="133.5" y="354" width="147" height="22.5"/>
+                    <attributedString key="attributedText">
+                        <fragment content="맛 집 찾 고 싶 을 때">
+                            <attributes>
+                                <color key="NSColor" red="0.99519230769230771" green="0.99038461538461542" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <font key="NSFont" size="19" name="AppleMyungjo"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCx-2S-Ky1">
+                    <rect key="frame" x="176" y="536.5" width="62" height="27.5"/>
+                    <attributedString key="attributedText">
+                        <fragment content="━">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.12549020349979401" green="0.12941177189350128" blue="0.13333334028720856" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="NSColor" red="0.94283380495249702" green="0.97049866424473485" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <font key="NSFont" size="14" name="Helvetica"/>
+                                <real key="NSKern" value="0.0"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                    <tabStops/>
+                                </paragraphStyle>
+                                <color key="NSStrokeColor" red="0.12549020349979401" green="0.12941177189350128" blue="0.13333334028720856" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <real key="NSStrokeWidth" value="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="  ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.12549020349979401" green="0.12941177189350128" blue="0.13333334028720856" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="NSColor" red="0.94283380495249702" green="0.97049866424473485" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <font key="NSFont" size="22" name="BodoniSvtyTwoITCTT-BookIta"/>
+                                <real key="NSKern" value="0.0"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                    <tabStops/>
+                                </paragraphStyle>
+                                <color key="NSStrokeColor" red="0.12548999999999999" green="0.12941" blue="0.13333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="or">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.12549020349979401" green="0.12941177189350128" blue="0.13333334028720856" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="NSColor" red="0.94283380495249702" green="0.97049866424473485" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <font key="NSFont" size="22" name="BodoniSvtyTwoITCTT-BookIta"/>
+                                <font key="NSOriginalFont" size="18" name="BodoniSvtyTwoITCTT-BookIta"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.12549020349979401" green="0.12941177189350128" blue="0.13333334028720856" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="NSColor" red="0.94283380495249702" green="0.97049866424473485" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <font key="NSFont" size="22" name="BodoniSvtyTwoITCTT-BookIta"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" ">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.12549020349979401" green="0.12941177189350128" blue="0.13333334028720856" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="NSColor" red="0.94283380495249702" green="0.97049866424473485" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <font key="NSFont" size="22" name="BodoniSvtyTwoITCTT-BookIta"/>
+                                <font key="NSOriginalFont" size="18" name="BodoniSvtyTwoITCTT-BookIta"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                    <tabStops/>
+                                </paragraphStyle>
+                            </attributes>
+                        </fragment>
+                        <fragment content="━">
+                            <attributes>
+                                <color key="NSBackgroundColor" red="0.12549020349979401" green="0.12941177189350128" blue="0.13333334028720856" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="NSColor" red="0.94283380495249702" green="0.97049866424473485" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <font key="NSFont" size="14" name="Helvetica"/>
+                                <real key="NSKern" value="0.0"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                    <tabStops/>
+                                </paragraphStyle>
+                                <color key="NSStrokeColor" red="0.12549020349979401" green="0.12941177189350128" blue="0.13333334028720856" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <real key="NSStrokeWidth" value="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="2lr-IZ-0Cz" firstAttribute="top" secondItem="WyR-Mq-tkp" secondAttribute="bottom" constant="10" id="0X8-bI-soq"/>
+                <constraint firstItem="vCx-2S-Ky1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7vT-3O-gv3"/>
+                <constraint firstItem="jsR-LY-u2b" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9Bo-Vd-V9H"/>
+                <constraint firstItem="2lr-IZ-0Cz" firstAttribute="top" secondItem="vCx-2S-Ky1" secondAttribute="bottom" constant="3" id="Agv-JZ-FHK"/>
                 <constraint firstItem="WyR-Mq-tkp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="AkM-Qm-hoh"/>
                 <constraint firstItem="lMW-6d-YTY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FRS-lh-8a3"/>
-                <constraint firstItem="WyR-Mq-tkp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="460" id="JRq-Ie-nWw"/>
+                <constraint firstItem="WyR-Mq-tkp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="450" id="JRq-Ie-nWw"/>
+                <constraint firstItem="vCx-2S-Ky1" firstAttribute="top" secondItem="WyR-Mq-tkp" secondAttribute="bottom" constant="3" id="Pep-YX-IX4"/>
                 <constraint firstItem="lMW-6d-YTY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="200" id="WFN-DS-G7V"/>
                 <constraint firstItem="sQ5-dT-WVM" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="XGN-jX-i7A"/>
                 <constraint firstItem="71n-cg-dUM" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="cjQ-bM-LsC"/>
                 <constraint firstItem="WyR-Mq-tkp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="100" id="dZg-BN-78R"/>
+                <constraint firstItem="jsR-LY-u2b" firstAttribute="top" secondItem="lMW-6d-YTY" secondAttribute="bottom" constant="15" id="eZv-aR-IxW"/>
                 <constraint firstItem="2lr-IZ-0Cz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ofw-eb-coE"/>
                 <constraint firstItem="2lr-IZ-0Cz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="100" id="v0h-md-kVP"/>
                 <constraint firstItem="sQ5-dT-WVM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xV1-MT-KJT"/>

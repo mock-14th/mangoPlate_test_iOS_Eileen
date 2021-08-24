@@ -25,6 +25,7 @@ class NewsTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
         
         let reviewHeight = reviewLabel.sizeThatFits(CGSize(width: reviewLabel.frame.width, height: CGFloat.greatestFiniteMagnitude))
         self.reviewLabelHeight.constant = reviewHeight.height
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

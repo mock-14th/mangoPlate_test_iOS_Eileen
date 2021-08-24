@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetProfileViewController" customModule="EduTemplate" customModuleProvider="target">
             <connections>
+                <outlet property="letterCountLabel" destination="iZT-xU-sGh" id="Fug-oy-EDx"/>
+                <outlet property="nicknameTextField" destination="Fvh-uR-KI7" id="AiJ-30-vNo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -35,11 +37,14 @@
                                 <constraint firstAttribute="width" constant="28" id="fV2-Sp-hRh"/>
                             </constraints>
                             <state key="normal" image="leftnavbuttonw"/>
+                            <connections>
+                                <action selector="backButton:" destination="-1" eventType="touchUpInside" id="iXz-5n-krc"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wbd-q2-xMs">
-                            <rect key="frame" x="157" y="115" width="100" height="100"/>
+                            <rect key="frame" x="167" y="125" width="80" height="80"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="100" id="CNc-ch-WCc"/>
+                                <constraint firstAttribute="width" constant="80" id="CNc-ch-WCc"/>
                                 <constraint firstAttribute="width" secondItem="Wbd-q2-xMs" secondAttribute="height" multiplier="1:1" id="dvH-oN-Efo"/>
                             </constraints>
                             <state key="normal" image="profile"/>
@@ -51,7 +56,7 @@
                                     <real key="value" value="2"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="50"/>
+                                    <real key="value" value="40"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </button>
@@ -62,7 +67,7 @@
                         <constraint firstItem="Zvp-sZ-2Mr" firstAttribute="centerX" secondItem="Q2z-Fo-p6L" secondAttribute="centerX" id="80k-xf-rDQ"/>
                         <constraint firstItem="Zvp-sZ-2Mr" firstAttribute="centerY" secondItem="Fsw-XL-YS3" secondAttribute="centerY" id="IoM-Nh-gSH"/>
                         <constraint firstItem="Wbd-q2-xMs" firstAttribute="centerX" secondItem="Q2z-Fo-p6L" secondAttribute="centerX" id="OGn-Fn-B5q"/>
-                        <constraint firstAttribute="bottom" secondItem="Wbd-q2-xMs" secondAttribute="bottom" constant="65" id="Rww-SP-4Uk"/>
+                        <constraint firstAttribute="bottom" secondItem="Wbd-q2-xMs" secondAttribute="bottom" constant="75" id="Rww-SP-4Uk"/>
                         <constraint firstItem="Zvp-sZ-2Mr" firstAttribute="top" secondItem="Q2z-Fo-p6L" secondAttribute="top" constant="65" id="Tok-cm-zme"/>
                         <constraint firstItem="Fsw-XL-YS3" firstAttribute="leading" secondItem="Q2z-Fo-p6L" secondAttribute="leading" constant="20" id="a5i-DQ-N8O"/>
                         <constraint firstAttribute="height" constant="280" id="dUn-4Z-ISS"/>
