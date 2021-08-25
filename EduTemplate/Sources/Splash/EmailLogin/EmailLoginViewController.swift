@@ -19,7 +19,9 @@ class EmailLoginViewController: BaseViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBAction func loginButton(_ sender: Any) {
         let input = EmailLoginInput(email: emailField.text!, password: passwordField.text!)
+        showIndicator()
         EmailLoginDataManager().emailLogin(input, viewController: self)
+        
     }
     
     @IBAction func backButton(_ sender: Any) {
@@ -40,4 +42,24 @@ class EmailLoginViewController: BaseViewController {
         super.viewWillDisappear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
+}
+
+extension EmailLoginViewController {
+    func loginSucceed(_ result: EmailLoginResult) {
+        dismissIndicator()
+        let vc = BaseTabBarController()
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        
+        UserDefaults.standard.set(result.userId, forKey: "UserIdKey")
+        UserDefaults.standard.set(result.jwt, forKey: "jwtKey")
+        
+        self.present(vc, animated: true)
+    }
+    
+    func failedToRequest(message: String) {
+        dismissIndicator()
+        presentAlert(message: message)
+    }
+    
 }

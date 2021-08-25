@@ -136,6 +136,7 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
             cell.ratingLabel.text = restaurantList[indexPath.row].rating
             cell.viewsLabel.text = String(restaurantList[indexPath.row].views)
             cell.reviewsLabel.text = String(restaurantList[indexPath.row].reviews)
+            cell.distanceLabel.text = String(restaurantList[indexPath.row].distance)
             
             return cell
         }

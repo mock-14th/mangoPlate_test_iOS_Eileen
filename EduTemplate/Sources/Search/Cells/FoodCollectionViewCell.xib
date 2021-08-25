@@ -49,6 +49,9 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61D-PA-LQU">
                         <rect key="frame" x="151.5" y="195.5" width="35.5" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35.5" id="VgB-CB-TXm"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                         <color key="textColor" red="0.99709862469999999" green="0.44323140379999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
@@ -92,7 +95,7 @@
                 <constraint firstItem="jBV-ES-ojE" firstAttribute="top" secondItem="M3R-4m-bRy" secondAttribute="bottom" constant="5" id="3TW-R8-OuY"/>
                 <constraint firstItem="cqx-LO-9dY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="6RL-rm-FVH"/>
                 <constraint firstItem="zQA-V4-b8e" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="783-U1-fxH"/>
-                <constraint firstItem="61D-PA-LQU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jBV-ES-ojE" secondAttribute="trailing" constant="2" id="B2H-rd-ga2"/>
+                <constraint firstItem="61D-PA-LQU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jBV-ES-ojE" secondAttribute="trailing" constant="5" id="B2H-rd-ga2"/>
                 <constraint firstItem="NvE-If-SMj" firstAttribute="top" secondItem="jBV-ES-ojE" secondAttribute="bottom" constant="2" id="B4K-xA-nPv"/>
                 <constraint firstItem="mzh-0g-E1N" firstAttribute="leading" secondItem="Aco-ly-yhE" secondAttribute="trailing" constant="10" id="BiN-cV-lIb"/>
                 <constraint firstItem="V6k-8U-jSv" firstAttribute="leading" secondItem="mzh-0g-E1N" secondAttribute="trailing" constant="4" id="CKh-pw-sHy"/>
@@ -114,6 +117,7 @@
             </constraints>
             <size key="customSize" width="190" height="245"/>
             <connections>
+                <outlet property="distanceLabel" destination="oWl-vA-lUn" id="Cgk-F5-hjz"/>
                 <outlet property="foodImg" destination="M3R-4m-bRy" id="IqP-wz-cgz"/>
                 <outlet property="placeAreaLabel" destination="NvE-If-SMj" id="VxN-HX-GSk"/>
                 <outlet property="placeNameLabel" destination="jBV-ES-ojE" id="4RP-Td-hCU"/>

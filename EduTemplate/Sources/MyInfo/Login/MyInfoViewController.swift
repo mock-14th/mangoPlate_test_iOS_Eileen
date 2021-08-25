@@ -22,7 +22,8 @@ class MyInfoViewController: UIViewController {
         infoTableView.delegate = self
         infoTableView.dataSource = self
         infoTableView.register(UINib(nibName: "InfoTableViewCell", bundle: nil), forCellReuseIdentifier: "InfoTableViewCell")
-        
+        infoTableView.register(UINib(nibName: "TimelineTableViewCell", bundle: nil), forCellReuseIdentifier: "TimelineTableViewCell")
+
         infoTableView.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
     }
 
@@ -49,13 +50,15 @@ extension MyInfoViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "InfoTableViewCell") as! InfoTableViewCell
         cell.infoImgView.image = UIImage(named: sectionList[indexPath.section][indexPath.row])
         cell.infoLabel.text = sectionList[indexPath.section][indexPath.row]
+        cell.selectionStyle = .none
         
         if (indexPath.section == 2) && (indexPath.row == 0) {
             cell.separatorInset = UIEdgeInsets(top: 0, left: 3000, bottom: 0, right: 0)
         }
         
         if (indexPath.section == 2) && (indexPath.row == 1) {
-            let cell1 = UITableViewCell()
+            let cell1 = tableView.dequeueReusableCell(withIdentifier: "TimelineTableViewCell", for: indexPath) as! TimelineTableViewCell
+            cell1.selectionStyle = .none
             return cell1
         }
         

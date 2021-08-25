@@ -34,7 +34,7 @@ class NewsViewController: BaseViewController {
         
         allnewsVC.didMove(toParent: self)
         
-        allnewsVC.view.frame = CGRect(x: 0, y: 44, width: self.view.bounds.width, height: self.view.bounds.height - 44)
+        allnewsVC.view.frame = CGRect(x: 0, y: 46, width: self.view.bounds.width, height: self.view.bounds.height - 46)
         allnewsVC.view.isHidden = false
     }
 
@@ -69,6 +69,12 @@ class NewsViewController: BaseViewController {
         UIView.animate(withDuration: 0.5, animations: {
             self.view.layoutIfNeeded()
         })
+        
+        allnewsVC.view.isHidden = true
+        
+        if newsSegmentedControl.selectedSegmentIndex == 0 {
+            allnewsVC.view.isHidden = false
+        }
         
     }
 

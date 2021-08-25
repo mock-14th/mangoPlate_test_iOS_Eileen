@@ -14,11 +14,17 @@ class EmailLoginDataManager {
             .responseDecodable(of: EmailLoginResponse.self) { response in
                 switch response.result {
                 case .success(let response):
-                    viewController.presentAlert(message: response.message)
-                    print(response.isSuccess)
+                    if response.code == 1000 {
+                        viewController.loginSucceed(response.result!)
+                    }
+                    else {
+                        viewController.dismissIndicator()
+                        viewController.presentAlert(message: response.message)
+                    }
                 case .failure(let error):
                     //viewController.dismissIndicator()
                     print(error.localizedDescription)
+                    viewController.failedToRequest(message: "서버와의 연결이 원활하지 않습니다.")
                 }
             }
     }

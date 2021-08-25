@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -223,6 +224,25 @@
                         <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="맛있다!" translatesAutoresizingMaskIntoConstraints="NO" id="A17-sZ-Di0">
+                        <rect key="frame" x="358" y="15" width="36" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="36" id="YIB-m0-f1w"/>
+                            <constraint firstAttribute="width" constant="36" id="vOZ-46-wei"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="맛있다!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7to-Hc-V60">
+                        <rect key="frame" x="357" y="52" width="38" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" name="mainOrange"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020-11-22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFo-Xa-oq0">
+                        <rect key="frame" x="332" y="411" width="62" height="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
@@ -252,9 +272,11 @@
                     <constraint firstItem="arz-dm-I9v" firstAttribute="centerY" secondItem="Rh0-ej-rQM" secondAttribute="centerY" id="REL-hl-sl9"/>
                     <constraint firstItem="gml-Mi-hDP" firstAttribute="leading" secondItem="8Gu-yx-Rpc" secondAttribute="leading" id="Td7-7b-DQM"/>
                     <constraint firstItem="xCd-tv-Sfu" firstAttribute="top" secondItem="Yhb-By-BmY" secondAttribute="bottom" constant="8" id="V9l-XK-s3s"/>
+                    <constraint firstItem="tFo-Xa-oq0" firstAttribute="centerY" secondItem="arz-dm-I9v" secondAttribute="centerY" id="Vqj-II-wco"/>
                     <constraint firstItem="yZP-O2-ITq" firstAttribute="leading" secondItem="6dd-po-awU" secondAttribute="trailing" constant="5" id="Ycd-G9-BPR"/>
                     <constraint firstAttribute="bottom" secondItem="stj-Q6-Wj4" secondAttribute="bottom" constant="15" id="Z2h-gM-Ktj"/>
                     <constraint firstItem="6dd-po-awU" firstAttribute="top" secondItem="eF3-T0-5l4" secondAttribute="bottom" constant="15" id="b6U-pK-PzD"/>
+                    <constraint firstItem="7to-Hc-V60" firstAttribute="centerX" secondItem="A17-sZ-Di0" secondAttribute="centerX" id="bmx-1j-Ncd"/>
                     <constraint firstItem="arz-dm-I9v" firstAttribute="leading" secondItem="Rh0-ej-rQM" secondAttribute="trailing" constant="3" id="cD8-1Q-1PM"/>
                     <constraint firstItem="Uns-dw-6uS" firstAttribute="leading" secondItem="gml-Mi-hDP" secondAttribute="trailing" constant="5" id="ct1-ut-hR3"/>
                     <constraint firstItem="6y7-xp-ySi" firstAttribute="leading" secondItem="Uns-dw-6uS" secondAttribute="trailing" constant="10" id="d7D-kK-H3h"/>
@@ -264,22 +286,36 @@
                     <constraint firstItem="yZP-O2-ITq" firstAttribute="centerY" secondItem="6dd-po-awU" secondAttribute="centerY" id="dgr-4k-LxQ"/>
                     <constraint firstItem="8Gu-yx-Rpc" firstAttribute="leading" secondItem="eF3-T0-5l4" secondAttribute="trailing" constant="8" id="eE1-pc-bxM"/>
                     <constraint firstItem="Yhb-By-BmY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="fp3-lj-G8p"/>
+                    <constraint firstItem="7to-Hc-V60" firstAttribute="top" secondItem="A17-sZ-Di0" secondAttribute="bottom" constant="1" id="gto-uR-a1Z"/>
                     <constraint firstItem="LFP-Cz-wX7" firstAttribute="centerY" secondItem="gF8-Eo-0M2" secondAttribute="centerY" id="hZl-Gg-K4q"/>
                     <constraint firstItem="xCd-tv-Sfu" firstAttribute="bottom" secondItem="KAT-Mf-RU9" secondAttribute="bottom" constant="10" id="hjI-8k-qCt"/>
                     <constraint firstItem="LFP-Cz-wX7" firstAttribute="leading" secondItem="DzK-Jj-iGR" secondAttribute="trailing" constant="5" id="lSD-bf-IFv"/>
                     <constraint firstAttribute="trailing" secondItem="OBx-En-PBC" secondAttribute="trailing" constant="15" id="lZR-Cd-Utc"/>
                     <constraint firstItem="8Gu-yx-Rpc" firstAttribute="centerY" secondItem="eF3-T0-5l4" secondAttribute="centerY" constant="-10" id="mpj-wC-0hK"/>
                     <constraint firstItem="DzK-Jj-iGR" firstAttribute="leading" secondItem="gF8-Eo-0M2" secondAttribute="trailing" constant="15" id="mv3-A3-bKO"/>
+                    <constraint firstAttribute="trailing" secondItem="tFo-Xa-oq0" secondAttribute="trailing" constant="20" id="o3s-MS-EY1"/>
+                    <constraint firstItem="A17-sZ-Di0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="ohk-sG-zQJ"/>
                     <constraint firstItem="xCd-tv-Sfu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="t4m-eE-mLf"/>
                     <constraint firstItem="DzK-Jj-iGR" firstAttribute="centerY" secondItem="stj-Q6-Wj4" secondAttribute="centerY" constant="1" id="toJ-Vt-9LI"/>
                     <constraint firstItem="DjM-y7-nOk" firstAttribute="leading" secondItem="MbT-C1-KDT" secondAttribute="trailing" constant="3" id="ugQ-L0-ci5"/>
+                    <constraint firstAttribute="trailing" secondItem="A17-sZ-Di0" secondAttribute="trailing" constant="20" id="vLy-Te-3lI"/>
                     <constraint firstItem="MbT-C1-KDT" firstAttribute="top" secondItem="xCd-tv-Sfu" secondAttribute="bottom" constant="10" id="yrX-Fs-O6b"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="areaInfoLabel" destination="yZP-O2-ITq" id="sOm-V1-lCQ"/>
+                <outlet property="commentCountLabel" destination="arz-dm-I9v" id="Wwg-ca-Nkj"/>
+                <outlet property="dateLabel" destination="tFo-Xa-oq0" id="oR8-O0-xFk"/>
+                <outlet property="evaluationImage" destination="A17-sZ-Di0" id="3Jk-XV-ZyF"/>
+                <outlet property="evaluationLabel" destination="7to-Hc-V60" id="Bf8-0Y-Qp1"/>
+                <outlet property="followerCountLabel" destination="NGP-Ti-8Ba" id="L1o-T5-htN"/>
+                <outlet property="likeCountLabel" destination="DjM-y7-nOk" id="NxP-Y7-sIs"/>
+                <outlet property="nicknameLabel" destination="8Gu-yx-Rpc" id="3Zz-l0-J7r"/>
                 <outlet property="pageLabel" destination="Tgp-1o-25d" id="xI6-tu-NHB"/>
                 <outlet property="pictureCollectionView" destination="xCd-tv-Sfu" id="oEn-vh-Tbh"/>
+                <outlet property="profileImageView" destination="eF3-T0-5l4" id="4xQ-kt-Y7T"/>
+                <outlet property="reviewCountLabel" destination="Uns-dw-6uS" id="WzB-7w-lWK"/>
                 <outlet property="reviewLabel" destination="Yhb-By-BmY" id="AyA-K0-zhb"/>
                 <outlet property="reviewLabelHeight" destination="pzC-pv-6tF" id="PxV-fG-U85"/>
             </connections>
@@ -293,6 +329,10 @@
         <image name="pencil" width="24" height="24"/>
         <image name="profile" width="130" height="130"/>
         <image name="speechbubble" width="64" height="64"/>
+        <image name="맛있다!" width="60" height="60"/>
+        <namedColor name="mainOrange">
+            <color red="0.96100002527236938" green="0.40000000596046448" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

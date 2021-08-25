@@ -13,6 +13,17 @@ class NewsTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
     
     @IBOutlet weak var pageLabel: UILabel!
     
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var nicknameLabel: UILabel!
+    @IBOutlet weak var reviewCountLabel: UILabel!
+    @IBOutlet weak var followerCountLabel: UILabel!
+    @IBOutlet weak var evaluationImage: UIImageView!
+    @IBOutlet weak var evaluationLabel: UILabel!
+    @IBOutlet weak var areaInfoLabel: UIButton!
+    @IBOutlet weak var likeCountLabel: UILabel!
+    @IBOutlet weak var commentCountLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
     @IBOutlet weak var reviewLabel: UILabel!
     @IBOutlet weak var reviewLabelHeight: NSLayoutConstraint!
     

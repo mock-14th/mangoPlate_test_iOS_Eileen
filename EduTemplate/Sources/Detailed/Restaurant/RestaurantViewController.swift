@@ -10,6 +10,26 @@ import UIKit
 class RestaurantViewController: BaseViewController {
 
     var restaurantId: Int = 0
+    var reviewData: [ReviewResult] = []
+    
+    @IBOutlet weak var informationLastUpdate: UILabel!
+    @IBOutlet weak var businessLabel: UILabel!
+    @IBOutlet weak var holidayLabel: UILabel!
+    @IBOutlet weak var priceInfoLabel: UILabel!
+    
+    var menuList: [String] = []
+    var priceList: [String] = []
+    
+    @IBOutlet weak var menuUpdateLabel: UILabel!
+    @IBOutlet weak var menu1Label: UILabel!
+    @IBOutlet weak var menu2Label: UILabel!
+    @IBOutlet weak var menu3Label: UILabel!
+    @IBOutlet weak var price1Label: UILabel!
+    @IBOutlet weak var price2Label: UILabel!
+    @IBOutlet weak var price3Label: UILabel!
+    
+    @IBOutlet weak var reviewTableView: UITableView!
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     
     @IBOutlet weak var foodPictureCollectionView: UICollectionView!
     @IBOutlet weak var topBar: UIView!
@@ -91,6 +111,9 @@ class RestaurantViewController: BaseViewController {
     //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ReviewDataManager().getReview(id: restaurantId, viewController: self)
+        
         myScrollView.delegate = self
         // Do any additional setup after loading the view.
         buttonView.isHidden = true
@@ -102,6 +125,16 @@ class RestaurantViewController: BaseViewController {
         foodPictureCollectionView.delegate = self
         foodPictureCollectionView.dataSource = self
         foodPictureCollectionView.register(UINib(nibName: "RestaurantCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "RestaurantCollectionViewCell")
+        
+        reviewTableView.delegate = self
+        reviewTableView.dataSource = self
+        reviewTableView.register(UINib(nibName: "ReviewTableViewCell", bundle: nil), forCellReuseIdentifier: "ReviewTableViewCell")
+        reviewTableView.register(UINib(nibName: "ReviewTabTableViewCell", bundle: nil), forCellReuseIdentifier: "ReviewTabTableViewCell")
+        reviewTableView.backgroundColor = UIColor(hex: 0xeeeeee)
+        reviewTableView.separatorStyle = .none
+        reviewTableView.rowHeight = UITableView.automaticDimension
+        reviewTableView.invalidateIntrinsicContentSize()
+        self.reviewTableView.layoutIfNeeded()
     }
     
     //MARK: viewWillAppear
@@ -109,6 +142,46 @@ class RestaurantViewController: BaseViewController {
         super.viewWillAppear(animated)
         showIndicator()
         RestaurantDetailDataManager().getRestaurantDetail(id: restaurantId, viewController: self)
+        reviewTableView.invalidateIntrinsicContentSize()
+        self.reviewTableView.layoutIfNeeded()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        tableViewHeight.constant = self.reviewTableView.contentSize.height
+        reviewTableView.reloadData()
+    }
+    
+}
+
+extension RestaurantViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return reviewData.count + 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewTabTableViewCell", for: indexPath) as! ReviewTabTableViewCell
+            cell.titleLabel.text = "주요 리뷰 (\(reviewData.count))"
+            return cell
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewTableViewCell", for: indexPath) as! ReviewTableViewCell
+        
+        let url = URL(string: reviewData[indexPath.row - 1].profileImage!)
+        let data = try? Data(contentsOf: url!)
+        cell.profileImage.image = UIImage(data: data!)
+        
+        cell.nicknameLabel.text = reviewData[indexPath.row - 1].nickname
+        cell.imageString = reviewData[indexPath.row - 1].reviewImage ?? ""
+        cell.reviewCountLabel.text = String(reviewData[indexPath.row - 1].reviewCount!)
+        cell.followerCountLabel.text = String(reviewData[indexPath.row - 1].followerCount!)
+        cell.evaluationImage.image = UIImage(named: reviewData[indexPath.row - 1].evaluation!)
+        cell.evaluationLabel.text = reviewData[indexPath.row - 1].evaluation
+        cell.reviewLabel.text = reviewData[indexPath.row - 1].content
+        cell.likeCountLabel.text = String(reviewData[indexPath.row - 1].likeCount!)
+        cell.commentCountLabel.text = String(reviewData[indexPath.row - 1].commentCount!)
+        cell.dateLabel.text = reviewData[indexPath.row - 1].date
+        
+        return cell
     }
     
     
@@ -132,7 +205,6 @@ extension RestaurantViewController: UICollectionViewDelegate, UICollectionViewDa
                 cell.restaurantImageView.image = UIImage(data: data!)
             }
         }
-       
         return cell
     }
     
@@ -162,7 +234,14 @@ extension RestaurantViewController: UIScrollViewDelegate {
     }
 }
 
+// MARK: API Functions
 extension RestaurantViewController {
+    
+    func didRetrieveReview(_ result: [ReviewResult]) {
+        self.dismissIndicator()
+        reviewData = result
+        reviewTableView.reloadData()
+    }
     func didRetrieveRestaurantDetail(_ result: [DetailResult]){
         self.dismissIndicator()
         titleLabel.text = result[0].name
@@ -172,6 +251,21 @@ extension RestaurantViewController {
         addressLabel.text = result[0].address
         imageString = result[0].imageUrl ?? ""
         imageList = imageString.components(separatedBy: ",")
+        informationLastUpdate.text = "마지막 업데이트: \(result[0].infoUpdate!)"
+        businessLabel.text = result[0].businessHour
+        holidayLabel.text = result[0].holiday
+        priceInfoLabel.text = result[0].priceInfo
+        menuUpdateLabel.text = result[0].menuUpdate
+        menuList = (result[0].menu?.components(separatedBy: "/")) ?? []
+        priceList = (result[0].price?.components(separatedBy: "/")) ?? []
+        
+        menu1Label.text = menuList[0]
+        menu2Label.text = menuList[1]
+        menu3Label.text = menuList[2]
+        price1Label.text = priceList[0]
+        price2Label.text = priceList[1]
+        price3Label.text = priceList[2]
+        
         foodPictureCollectionView.reloadData()
     }
     

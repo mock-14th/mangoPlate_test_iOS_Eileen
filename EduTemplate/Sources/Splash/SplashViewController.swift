@@ -40,11 +40,11 @@ class SplashViewController: BaseViewController {
                 let input = KakaoLoginInput(accessToken: oauthToken!.accessToken)
                 KakaoLoginDataManager().kakaoLogin(input, viewController: self)
                 
-                /*let vc = BaseTabBarController()
+                let vc = BaseTabBarController()
                 vc.modalPresentationStyle = .fullScreen
                 vc.modalTransitionStyle = .crossDissolve
                 
-                self.present(vc, animated: true)*/
+                self.present(vc, animated: true)
                 print(oauthToken?.accessToken, "액세스 토큰")
                 
                 _ = oauthToken

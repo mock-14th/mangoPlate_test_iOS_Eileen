@@ -17,6 +17,7 @@ struct SearchResult: Decodable {
     var id: Int
     var name: String
     var area: String
+    var distance: String
     var imageUrl: String
     var views: Int
     var reviews: Int

@@ -23,6 +23,9 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
     let myInfoViewController = MyInfoViewController()
     let myInfoTabBarItem = UITabBarItem(title: "내정보", image: UIImage(named: "myinfoitem"), tag: 4)
     
+    let myInfoLogoutViewController = MyInfoLogoutViewController()
+    let myInfoLogoutTabBarItem = UITabBarItem(title: "내정보", image: UIImage(named: "myinfoitem"), tag: 4)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBar.tintColor = UIColor.mainOrange
@@ -34,17 +37,21 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
         let plusNavController = UINavigationController(rootViewController: plusViewController)
         let newsNavController = UINavigationController(rootViewController: newsViewController)
         let myInfoNavController = UINavigationController(rootViewController: myInfoViewController)
+        let myInfoLogoutNavController = UINavigationController(rootViewController: myInfoLogoutViewController)
         
         searchTabBarItem.imageInsets = UIEdgeInsets(top: 14, left: 16, bottom: 15, right: 16)
         pickTabBarItem.imageInsets = UIEdgeInsets(top: 14, left: 15, bottom: 13, right: 15)
         newsTabBarItem.imageInsets = UIEdgeInsets(top: 14, left: 18, bottom: 11, right: 18)
         myInfoTabBarItem.imageInsets = UIEdgeInsets(top: 14, left: 16, bottom: 15, right: 16)
+        myInfoLogoutTabBarItem.imageInsets = UIEdgeInsets(top: 14, left: 16, bottom: 15, right: 16)
         
         searchNavController.tabBarItem = searchTabBarItem
         pickNavController.tabBarItem = pickTabBarItem
         plusNavController.tabBarItem = plusTabBarItem
         newsNavController.tabBarItem = newsTabBarItem
         myInfoNavController.tabBarItem = myInfoTabBarItem
+        myInfoLogoutNavController.tabBarItem = myInfoLogoutTabBarItem
+        
         
         self.viewControllers = [searchNavController, pickNavController, plusNavController, newsNavController, myInfoNavController]
         
@@ -75,6 +82,10 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
         plusNavController.modalTransitionStyle = .crossDissolve
         plusNavController.navigationController?.setNavigationBarHidden(true, animated: false)
         present(plusNavController, animated: true, completion: nil)
+    }
+    
+    func toPick() {
+        self.selectedIndex = 1
     }
     
 }

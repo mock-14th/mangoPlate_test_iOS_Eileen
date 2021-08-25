@@ -16,13 +16,12 @@ class SearchViewDataManager {
             .responseDecodable(of: SearchViewResponse.self) { response in
                 switch response.result {
                 case .success(let response):
-                    viewController.didRetrieveRestaurants(response.result!)
+                    viewController.didRetrieveRestaurants((response.result!))
                 case .failure(let error):
                     print(error.localizedDescription)
                     viewController.failedToRequest(message: "서버와의 연결이 원활하지 않습니다.")
                 }
             }
-          
     }
 }
 

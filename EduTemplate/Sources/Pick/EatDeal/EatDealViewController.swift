@@ -32,7 +32,7 @@ class EatDealViewController: BaseViewController {
         eatDealTableView.estimatedRowHeight = 55
         
         buttonView.addSubview(myEatDealButton)
-        let viewModel = MyEatDealButtonViewModel(title: "내 주변")
+        let viewModel = MyEatDealButtonViewModel(title: "지역 선택")
         myEatDealButton.configure(with: viewModel)
     }
 
@@ -47,11 +47,13 @@ extension EatDealViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             let cell = UITableViewCell()
             cell.separatorInset = UIEdgeInsets(top: 0, left: 3000, bottom: 0, right: 0)
+            cell.selectionStyle = .none
             return cell
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "EatDealTableViewCell", for: indexPath) as! EatDealTableViewCell
             cell.noteLabel.text = "asasdfsfa\nasfasf"
+            cell.selectionStyle = .none
             return cell
         }
     }

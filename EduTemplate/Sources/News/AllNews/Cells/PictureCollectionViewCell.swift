@@ -9,6 +9,7 @@ import UIKit
 
 class PictureCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var foodPictureImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

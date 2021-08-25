@@ -42,5 +42,13 @@ extension UIView {
         let nib = UINib(nibName: nibName, bundle: bundle)
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
+    
+    func setGradient(){
+        let colors: [CGColor] = [#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0).cgColor, #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.6968056382).cgColor]
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = colors
+        gradientLayer.frame = bounds
+        layer.insertSublayer(gradientLayer, at: 0)
+    }
 }
 

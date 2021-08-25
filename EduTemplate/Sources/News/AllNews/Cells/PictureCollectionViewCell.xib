@@ -34,6 +34,9 @@
                 <constraint firstAttribute="bottom" secondItem="cn7-wG-wcE" secondAttribute="bottom" id="rZ1-sn-McS"/>
             </constraints>
             <size key="customSize" width="366" height="180"/>
+            <connections>
+                <outlet property="foodPictureImage" destination="cn7-wG-wcE" id="0er-xT-m2L"/>
+            </connections>
             <point key="canvasLocation" x="118.84057971014494" y="79.6875"/>
         </collectionViewCell>
     </objects>

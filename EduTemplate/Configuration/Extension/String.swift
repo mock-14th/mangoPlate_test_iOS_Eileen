@@ -10,6 +10,13 @@ import UIKit
 extension String {
     // MARK: 자주 사용되는 기능들
     // ex. guard let email = emailTextField.text?.trim, email.isExists else { return }
+    
+    func strikeThrough() -> NSAttributedString {
+        let attributeString = NSMutableAttributedString(string: self)
+        attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0, attributeString.length))
+        return attributeString
+    }
+    
     var isEmpty: Bool {
         return self.count == 0
     }
