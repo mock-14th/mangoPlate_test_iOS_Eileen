@@ -18,7 +18,7 @@ class SearchViewDataManager {
                 case .success(let response):
                     viewController.didRetrieveRestaurants((response.result!))
                 case .failure(let error):
-                    print(error.localizedDescription)
+                    print(error.localizedDescription, "searchView")
                     viewController.failedToRequest(message: "서버와의 연결이 원활하지 않습니다.")
                 }
             }

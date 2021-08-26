@@ -8,7 +8,12 @@
 import UIKit
 
 class MyInfoViewController: UIViewController {
-
+    
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var nicknameLabel: UILabel!
+    @IBOutlet weak var followerLabel: UILabel!
+    @IBOutlet weak var followingLabel: UILabel!
+    
     @IBOutlet weak var infoTableView: UITableView!
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     
@@ -29,6 +34,13 @@ class MyInfoViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         self.changeTableHeight()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        showIndicator()
+        let userId = Int(UserDefaults.standard.string(forKey: "UserIdKey")!)!
+        GetUserInfoDataManager().getUserInfo(userId: userId, viewController: self)
     }
 }
 
@@ -52,7 +64,7 @@ extension MyInfoViewController: UITableViewDelegate, UITableViewDataSource {
         cell.infoLabel.text = sectionList[indexPath.section][indexPath.row]
         cell.selectionStyle = .none
         
-        if (indexPath.section == 2) && (indexPath.row == 0) {
+        if (indexPath.section == 2) && (indexPath.row == 0) || (indexPath.section == 3) {
             cell.separatorInset = UIEdgeInsets(top: 0, left: 3000, bottom: 0, right: 0)
         }
         
@@ -63,6 +75,12 @@ extension MyInfoViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath.section == 3) && (indexPath.row == 0) {
+            navigationController?.pushViewController(SettingsViewController(), animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -84,4 +102,22 @@ extension MyInfoViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+}
+
+extension MyInfoViewController {
+    func didRetrieveUserInfo(_ result: GetUserInfoResult) {
+        dismissIndicator()
+        let url = URL(string: result.profileImage ?? "")
+        if url != nil {
+            let data = try? Data(contentsOf: url!)
+            profileImage.image = UIImage(data: data!)
+        }
+        nicknameLabel.text = result.nickname ?? ""
+        followerLabel.text = String(result.followers ?? 0)
+        followingLabel.text = String(result.followings ?? 0)
+    }
+    func failedToRequest(message: String) {
+        dismissIndicator()
+        presentAlert(message: message)
+    }
 }

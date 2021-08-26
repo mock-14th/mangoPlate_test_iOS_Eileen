@@ -14,7 +14,8 @@ struct RestaurantDetailResponse: Decodable {
 
 struct DetailResult: Decodable {
     var name: String?
-    var address: String?
+    var roadNameAddress: String?
+    var lotNumberAddress: String?
     var callNumber: String?
     var imageUrl: String?
     var views: Int?

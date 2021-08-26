@@ -15,6 +15,12 @@ class KakaoLoginDataManager {
             .responseDecodable(of: KakaoLoginResponse.self) { response in
                 switch response.result {
                 case .success(let response):
+                    if response.code == 1000 {
+                        viewController.didKakaoLogin(response.result!)
+                    }
+                    else {
+                        viewController.presentAlert(message: response.message)
+                    }
                     print(response.message)
                 case .failure(let error):
                     //viewController.dismissIndicator()

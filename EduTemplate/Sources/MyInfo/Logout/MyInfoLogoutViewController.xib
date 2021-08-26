@@ -48,6 +48,9 @@
                                     <real key="value" value="15"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="loginButton:" destination="-1" eventType="touchUpInside" id="L2h-ZU-d5a"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.99607843139999996" green="0.4431372549" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

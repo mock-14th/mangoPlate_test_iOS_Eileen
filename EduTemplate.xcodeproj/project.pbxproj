@@ -34,6 +34,14 @@
 		CD2F0FF826CA49D8009825EF /* PlusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2F0FF626CA49D8009825EF /* PlusViewController.xib */; };
 		CD2F0FFC26CA4A73009825EF /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2F0FFA26CA4A73009825EF /* MyInfoViewController.swift */; };
 		CD2F0FFD26CA4A73009825EF /* MyInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2F0FFB26CA4A73009825EF /* MyInfoViewController.xib */; };
+		CD33964526D75F7800CF48DE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33964326D75F7800CF48DE /* SettingsViewController.swift */; };
+		CD33964626D75F7800CF48DE /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD33964426D75F7800CF48DE /* SettingsViewController.xib */; };
+		CD33964A26D7781A00CF48DE /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33964826D7781A00CF48DE /* SettingsTableViewCell.swift */; };
+		CD33964B26D7781A00CF48DE /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD33964926D7781A00CF48DE /* SettingsTableViewCell.xib */; };
+		CD33964F26D7933900CF48DE /* LogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33964E26D7933900CF48DE /* LogoutResponse.swift */; };
+		CD33965126D7934400CF48DE /* LogoutDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33965026D7934400CF48DE /* LogoutDataManager.swift */; };
+		CD33965A26D7A47600CF48DE /* GetUserInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33965926D7A47600CF48DE /* GetUserInfoResponse.swift */; };
+		CD33965C26D7A4A000CF48DE /* GetUserInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD33965B26D7A4A000CF48DE /* GetUserInfoDataManager.swift */; };
 		CD3C5A7E26CB8F8C000CFB1B /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3C5A7C26CB8F8C000CFB1B /* EmailSignUpViewController.swift */; };
 		CD3C5A7F26CB8F8C000CFB1B /* EmailSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3C5A7D26CB8F8C000CFB1B /* EmailSignUpViewController.xib */; };
 		CD3C5A8126CB947F000CFB1B /* EmailSignUpViewControllerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3C5A8026CB947F000CFB1B /* EmailSignUpViewControllerEntity.swift */; };
@@ -106,6 +114,7 @@
 		CDD19AE326D670F80067A87B /* EatDealResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD19AE226D670F70067A87B /* EatDealResponse.swift */; };
 		CDD19AE726D677D10067A87B /* EatDealDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD19AE526D677D10067A87B /* EatDealDetailViewController.swift */; };
 		CDD19AE826D677D10067A87B /* EatDealDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDD19AE626D677D10067A87B /* EatDealDetailViewController.xib */; };
+		CDD19AEA26D691360067A87B /* EatDealDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD19AE926D691360067A87B /* EatDealDataManager.swift */; };
 		CDE6E0D626D1438C003A405E /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE6E0D426D1438C003A405E /* InfoTableViewCell.swift */; };
 		CDE6E0D726D1438C003A405E /* InfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE6E0D526D1438C003A405E /* InfoTableViewCell.xib */; };
 		CDE6E0DB26D21A92003A405E /* KakaoLoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE6E0DA26D21A92003A405E /* KakaoLoginInput.swift */; };
@@ -149,6 +158,14 @@
 		CD2F0FF626CA49D8009825EF /* PlusViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlusViewController.xib; sourceTree = "<group>"; };
 		CD2F0FFA26CA4A73009825EF /* MyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewController.swift; sourceTree = "<group>"; };
 		CD2F0FFB26CA4A73009825EF /* MyInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyInfoViewController.xib; sourceTree = "<group>"; };
+		CD33964326D75F7800CF48DE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		CD33964426D75F7800CF48DE /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		CD33964826D7781A00CF48DE /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		CD33964926D7781A00CF48DE /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		CD33964E26D7933900CF48DE /* LogoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResponse.swift; sourceTree = "<group>"; };
+		CD33965026D7934400CF48DE /* LogoutDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutDataManager.swift; sourceTree = "<group>"; };
+		CD33965926D7A47600CF48DE /* GetUserInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserInfoResponse.swift; sourceTree = "<group>"; };
+		CD33965B26D7A4A000CF48DE /* GetUserInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserInfoDataManager.swift; sourceTree = "<group>"; };
 		CD3C5A7C26CB8F8C000CFB1B /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
 		CD3C5A7D26CB8F8C000CFB1B /* EmailSignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailSignUpViewController.xib; sourceTree = "<group>"; };
 		CD3C5A8026CB947F000CFB1B /* EmailSignUpViewControllerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewControllerEntity.swift; sourceTree = "<group>"; };
@@ -221,6 +238,7 @@
 		CDD19AE226D670F70067A87B /* EatDealResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatDealResponse.swift; sourceTree = "<group>"; };
 		CDD19AE526D677D10067A87B /* EatDealDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatDealDetailViewController.swift; sourceTree = "<group>"; };
 		CDD19AE626D677D10067A87B /* EatDealDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EatDealDetailViewController.xib; sourceTree = "<group>"; };
+		CDD19AE926D691360067A87B /* EatDealDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatDealDataManager.swift; sourceTree = "<group>"; };
 		CDE6E0D426D1438C003A405E /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 		CDE6E0D526D1438C003A405E /* InfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTableViewCell.xib; sourceTree = "<group>"; };
 		CDE6E0DA26D21A92003A405E /* KakaoLoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginInput.swift; sourceTree = "<group>"; };
@@ -395,10 +413,56 @@
 		CD2F0FF926CA4A4E009825EF /* MyInfo */ = {
 			isa = PBXGroup;
 			children = (
+				CD33964726D75F7C00CF48DE /* Settings */,
 				CD7EA27426D12F04006CB76A /* Logout */,
 				CD7EA27326D12EFB006CB76A /* Login */,
 			);
 			path = MyInfo;
+			sourceTree = "<group>";
+		};
+		CD33964726D75F7C00CF48DE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CD33964D26D78CAF00CF48DE /* DataManager */,
+				CD33964C26D78CA900CF48DE /* Entity */,
+				CD33964326D75F7800CF48DE /* SettingsViewController.swift */,
+				CD33964426D75F7800CF48DE /* SettingsViewController.xib */,
+				CD33964826D7781A00CF48DE /* SettingsTableViewCell.swift */,
+				CD33964926D7781A00CF48DE /* SettingsTableViewCell.xib */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		CD33964C26D78CA900CF48DE /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CD33964E26D7933900CF48DE /* LogoutResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CD33964D26D78CAF00CF48DE /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				CD33965026D7934400CF48DE /* LogoutDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		CD33965226D7A0E300CF48DE /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				CD33965926D7A47600CF48DE /* GetUserInfoResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CD33965326D7A0E700CF48DE /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				CD33965B26D7A4A000CF48DE /* GetUserInfoDataManager.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		CD3C5A7B26CB8F51000CFB1B /* EmailSignUp */ = {
@@ -627,9 +691,11 @@
 		CD7EA27326D12EFB006CB76A /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				CD33965226D7A0E300CF48DE /* Entity */,
+				CD33965326D7A0E700CF48DE /* DataManager */,
 				CDE6E0D326D14370003A405E /* Cells */,
-				CD2F0FFB26CA4A73009825EF /* MyInfoViewController.xib */,
 				CD2F0FFA26CA4A73009825EF /* MyInfoViewController.swift */,
+				CD2F0FFB26CA4A73009825EF /* MyInfoViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -710,6 +776,7 @@
 		CDD19AE126D66EAB0067A87B /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				CDD19AE926D691360067A87B /* EatDealDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -863,6 +930,7 @@
 				CD3C5A8C26CCAC2F000CFB1B /* PhoneViewController.xib in Resources */,
 				CD3C5A7F26CB8F8C000CFB1B /* EmailSignUpViewController.xib in Resources */,
 				CDE6E0E826D26BCD003A405E /* NewsTableViewCell.xib in Resources */,
+				CD33964626D75F7800CF48DE /* SettingsViewController.xib in Resources */,
 				BD4394A9252E2AE40055F2E6 /* NotoSansCJKkr-Bold.otf in Resources */,
 				CD7EA27826D12F16006CB76A /* MyInfoLogoutViewController.xib in Resources */,
 				CD7737AB26C8BA9B002E1C8D /* SearchViewController.xib in Resources */,
@@ -873,6 +941,7 @@
 				BD4394A7252E2AE40055F2E6 /* NotoSansCJKkr-Medium.otf in Resources */,
 				CD98865326D29BEC0064DB07 /* PictureCollectionViewCell.xib in Resources */,
 				CD7737B926C8EC12002E1C8D /* FoodCollectionViewCell.xib in Resources */,
+				CD33964B26D7781A00CF48DE /* SettingsTableViewCell.xib in Resources */,
 				CD3C5AA726CDFECF000CFB1B /* StoryViewController.xib in Resources */,
 				CDA1A49226CE9B4C00056984 /* RestaurantViewController.xib in Resources */,
 				CD3C5AA026CDFBF8000CFB1B /* EatDealViewController.xib in Resources */,
@@ -938,8 +1007,10 @@
 				CDD19AE326D670F80067A87B /* EatDealResponse.swift in Sources */,
 				CD9CC98E26D5F11200769EE5 /* ReviewTabTableViewCell.swift in Sources */,
 				BD439434252E1FBD0055F2E6 /* Device.swift in Sources */,
+				CD33964A26D7781A00CF48DE /* SettingsTableViewCell.swift in Sources */,
 				CD7737B826C8EC12002E1C8D /* FoodCollectionViewCell.swift in Sources */,
 				BD439401252E13EF0055F2E6 /* AppDelegate.swift in Sources */,
+				CD33964526D75F7800CF48DE /* SettingsViewController.swift in Sources */,
 				CD3C5A8B26CCAC2F000CFB1B /* PhoneViewController.swift in Sources */,
 				CD3C5A7E26CB8F8C000CFB1B /* EmailSignUpViewController.swift in Sources */,
 				CD2F0FEE26CA2D12009825EF /* MyCustomButton.swift in Sources */,
@@ -961,12 +1032,15 @@
 				CDE6E0DD26D21B39003A405E /* KakaoLoginResponse.swift in Sources */,
 				BD439431252E1F870055F2E6 /* IndicatorView.swift in Sources */,
 				CD2F0FFC26CA4A73009825EF /* MyInfoViewController.swift in Sources */,
+				CD33965C26D7A4A000CF48DE /* GetUserInfoDataManager.swift in Sources */,
+				CD33965126D7934400CF48DE /* LogoutDataManager.swift in Sources */,
 				BD439428252E1C820055F2E6 /* UIButton.swift in Sources */,
 				CD515CC526D4E39C00AE45FA /* UserInfoInput.swift in Sources */,
 				CD7737AF26C8CA09002E1C8D /* PickViewController.swift in Sources */,
 				CD515CC726D540CB00AE45FA /* PlusCustomButton.swift in Sources */,
 				CD515CBF26D404A800AE45FA /* RestaurantDetailDataManager.swift in Sources */,
 				BD4394F8252E37580055F2E6 /* Constant.swift in Sources */,
+				CD33964F26D7933900CF48DE /* LogoutResponse.swift in Sources */,
 				CD7EA26D26CFD83E006CB76A /* ResCustomButton.swift in Sources */,
 				CD7737AA26C8BA9B002E1C8D /* SearchViewController.swift in Sources */,
 				CD76C8F926D37585009AD7FF /* NewsCustomButton.swift in Sources */,
@@ -989,11 +1063,13 @@
 				BD4394AC252E2AED0055F2E6 /* UIFont.swift in Sources */,
 				CD2F0FF226CA457E009825EF /* NewsViewController.swift in Sources */,
 				CD3C5A9026CD2566000CFB1B /* PhoneAuthViewController.swift in Sources */,
+				CD33965A26D7A47600CF48DE /* GetUserInfoResponse.swift in Sources */,
 				BD43942E252E1E9B0055F2E6 /* UINavigationBar.swift in Sources */,
 				CD7737A226C89F34002E1C8D /* UIView.swift in Sources */,
 				BD43942B252E1D160055F2E6 /* UIViewController.swift in Sources */,
 				CDA1A49126CE9B4C00056984 /* RestaurantViewController.swift in Sources */,
 				CD3C5A9526CD617E000CFB1B /* SetProfileViewController.swift in Sources */,
+				CDD19AEA26D691360067A87B /* EatDealDataManager.swift in Sources */,
 				CD77379726C7B858002E1C8D /* SplashViewController.swift in Sources */,
 				CD76C8FD26D3BF1A009AD7FF /* SearchViewResponse.swift in Sources */,
 				BD439425252E1BEE0055F2E6 /* Color.swift in Sources */,

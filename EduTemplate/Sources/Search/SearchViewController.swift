@@ -68,12 +68,11 @@ class SearchViewController: BaseViewController {
         filterView.addSubview(myLocationButton)
         let viewModel1 = MyCustomButtonViewModel(imageName: "add", title: "내 주변", borderWidth: 0, borderColor: UIColor.mainOrange.cgColor)
         myLocationButton.configure(with: viewModel1)
-        //myLocationButton.addTarget(self, action: #selector(locationAction), for: .touchUpInside)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        showIndicator()
         SearchViewDataManager().getRestaurant(area: "성남시", viewController: self)
     }
     
@@ -121,13 +120,6 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FoodCollectionViewCell", for: indexPath) as! FoodCollectionViewCell
             cell.placeNameLabel.text = String(indexPath.row + 1) + ". " + restaurantList[indexPath.row].name
             
-            /*let url = URL(string: restaurantList[indexPath.row].imageUrl)
-            DispatchQueue.global().async {
-                let data = try? Data(contentsOf: url!)
-                DispatchQueue.main.async {
-                    cell.foodImg.image = UIImage(data: data!)
-                }
-            }*/
             let url = URL(string: restaurantList[indexPath.row].imageUrl)
             let data = try? Data(contentsOf: url!)
             cell.foodImg.image = UIImage(data: data!)

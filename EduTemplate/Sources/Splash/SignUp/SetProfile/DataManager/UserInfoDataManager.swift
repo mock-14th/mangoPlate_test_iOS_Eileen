@@ -16,7 +16,7 @@ class UserInfoDataManager {
                 case .success(let response):
                     viewController.dismissIndicator()
                     viewController.presentAlert(message: response.message)
-                    print(response.isSuccess)
+                    print(response.message)
                 case .failure(let error):
                     viewController.dismissIndicator()
                     print(error.localizedDescription)

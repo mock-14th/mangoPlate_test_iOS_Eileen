@@ -13,7 +13,7 @@ class EmailLoginViewController: BaseViewController {
     @IBOutlet weak var passwordField: UITextField!
     
     @IBAction func toEmailSignUp(_ sender: Any) {
-        navigationController?.pushViewController(EmailSignUpViewController(), animated: true)
+        self.navigationController?.pushViewController(EmailSignUpViewController(), animated: true)
     }
     
     @IBOutlet weak var loginButton: UIButton!
@@ -36,23 +36,38 @@ class EmailLoginViewController: BaseViewController {
         
         emailField.setBottomBorder()
         passwordField.setBottomBorder()
+        loginButton.isEnabled = false
+        passwordField.addTarget(self, action: #selector(passwordTextFieldDidChange(_:)), for: .editingChanged)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
+    
+    @objc func passwordTextFieldDidChange(_ sender: Any?) {
+        if passwordField.text != "" {
+            loginButton.isEnabled = true
+            loginButton.backgroundColor = .mainOrange
+        }
+        else {
+            loginButton.isEnabled = false
+            loginButton.backgroundColor = UIColor(hex: 0xcacaca)
+        }
+        
+    }
 }
 
 extension EmailLoginViewController {
     func loginSucceed(_ result: EmailLoginResult) {
         dismissIndicator()
+        UserDefaults.standard.set(String(result.id), forKey: "UserIdKey")
+        //UserDefaults.standard.set(result.jwt, forKey: "jwtKey")
+        JwtToken.token = result.jwt
+        
         let vc = BaseTabBarController()
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = .crossDissolve
-        
-        UserDefaults.standard.set(result.userId, forKey: "UserIdKey")
-        UserDefaults.standard.set(result.jwt, forKey: "jwtKey")
         
         self.present(vc, animated: true)
     }

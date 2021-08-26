@@ -19,10 +19,6 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reviewpicture" translatesAutoresizingMaskIntoConstraints="NO" id="cn7-wG-wcE">
                         <rect key="frame" x="0.0" y="0.0" width="360" height="180"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="360" id="AA8-Ph-pgg"/>
-                            <constraint firstAttribute="height" constant="180" id="vL2-Qg-eMw"/>
-                        </constraints>
                     </imageView>
                 </subviews>
             </view>

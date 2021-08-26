@@ -41,7 +41,9 @@ class RestaurantViewController: BaseViewController {
     @IBAction func downButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-
+    @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
+    
     @IBOutlet weak var mapButtonView: UIView!
     @IBOutlet weak var ItemView: UIView!
     
@@ -101,9 +103,13 @@ class RestaurantViewController: BaseViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
+    
     @IBOutlet weak var viewsLabel: UILabel!
     @IBOutlet weak var reviewsLabel: UILabel!
+    @IBOutlet weak var starCountLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var lotaddressLabel: UILabel!
     
     var imageString: String = ""
     var imageList: [String] = []
@@ -119,7 +125,12 @@ class RestaurantViewController: BaseViewController {
         buttonView.isHidden = true
         
         downButton.setImage(UIImage(named: "downbutton")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        downButton.tintColor = .orange
+        downButton.tintColor = .mainOrange
+        //cameraButton.setImage(UIImage(named: "camera")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        //shareButton.setImage(UIImage(named: "share")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        cameraButton.tintColor = .mainOrange
+        shareButton.tintColor = .mainOrange
+        
         addButtons()
         
         foodPictureCollectionView.delegate = self
@@ -162,10 +173,11 @@ extension RestaurantViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewTabTableViewCell", for: indexPath) as! ReviewTabTableViewCell
             cell.titleLabel.text = "주요 리뷰 (\(reviewData.count))"
+            cell.selectionStyle = .none
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewTableViewCell", for: indexPath) as! ReviewTableViewCell
-        
+        cell.selectionStyle = .none
         let url = URL(string: reviewData[indexPath.row - 1].profileImage!)
         let data = try? Data(contentsOf: url!)
         cell.profileImage.image = UIImage(data: data!)
@@ -177,13 +189,13 @@ extension RestaurantViewController: UITableViewDelegate, UITableViewDataSource {
         cell.evaluationImage.image = UIImage(named: reviewData[indexPath.row - 1].evaluation!)
         cell.evaluationLabel.text = reviewData[indexPath.row - 1].evaluation
         cell.reviewLabel.text = reviewData[indexPath.row - 1].content
+        cell.reviewLabel.sizeToFit()
         cell.likeCountLabel.text = String(reviewData[indexPath.row - 1].likeCount!)
         cell.commentCountLabel.text = String(reviewData[indexPath.row - 1].commentCount!)
         cell.dateLabel.text = reviewData[indexPath.row - 1].date
         
         return cell
     }
-    
     
 }
 
@@ -199,7 +211,7 @@ extension RestaurantViewController: UICollectionViewDelegate, UICollectionViewDa
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RestaurantCollectionViewCell", for: indexPath) as! RestaurantCollectionViewCell
         
         if imageString != "" {
-            if indexPath.row < imageList.count {
+            if indexPath.row < imageList.count && imageList[indexPath.row] != "" {
                 let url = URL(string: imageList[indexPath.row])
                 let data = try? Data(contentsOf: url!)
                 cell.restaurantImageView.image = UIImage(data: data!)
@@ -216,6 +228,8 @@ extension RestaurantViewController: UIScrollViewDelegate {
         if scrollView == myScrollView {
             if scrollView.contentOffset.y >= 237 {
                 buttonView.isHidden = false
+                cameraButton.tintColor = .white
+                shareButton.tintColor = .white
                 downButton.tintColor = .white
                 topBar.alpha = 0
             }
@@ -229,6 +243,9 @@ extension RestaurantViewController: UIScrollViewDelegate {
             else {
                 topBar.alpha = 1
                 downButton.tintColor = .mainOrange
+                cameraButton.tintColor = .mainOrange
+                shareButton.tintColor = .mainOrange
+                topBar.tintColor = .mainOrange
             }
         }
     }
@@ -246,9 +263,12 @@ extension RestaurantViewController {
         self.dismissIndicator()
         titleLabel.text = result[0].name
         nameLabel.text = result[0].name
+        ratingLabel.text = result[0].rating
         viewsLabel.text = String(result[0].views ?? 0)
         reviewsLabel.text = String(result[0].reviews ?? 0)
-        addressLabel.text = result[0].address
+        starCountLabel.text = String(result[0].starCount ?? 0)
+        addressLabel.text = result[0].roadNameAddress
+        lotaddressLabel.text = result[0].lotNumberAddress
         imageString = result[0].imageUrl ?? ""
         imageList = imageString.components(separatedBy: ",")
         informationLastUpdate.text = "마지막 업데이트: \(result[0].infoUpdate!)"
@@ -259,14 +279,20 @@ extension RestaurantViewController {
         menuList = (result[0].menu?.components(separatedBy: "/")) ?? []
         priceList = (result[0].price?.components(separatedBy: "/")) ?? []
         
-        menu1Label.text = menuList[0]
-        menu2Label.text = menuList[1]
-        menu3Label.text = menuList[2]
-        price1Label.text = priceList[0]
-        price2Label.text = priceList[1]
-        price3Label.text = priceList[2]
-        
+        if menuList.count != 0 {
+            menu1Label.text = menuList[0]
+            menu2Label.text = menuList[1]
+            menu3Label.text = menuList[2]
+        }
+        if priceList.count != 0 {
+            price1Label.text = priceList[0]
+            price2Label.text = priceList[1]
+            price3Label.text = priceList[2]
+        }
+       
         foodPictureCollectionView.reloadData()
+        reviewTableView.invalidateIntrinsicContentSize()
+        self.reviewTableView.layoutIfNeeded()
     }
     
     func failedToRequest(message: String) {

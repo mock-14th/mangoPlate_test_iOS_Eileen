@@ -13,6 +13,6 @@ struct EmailLoginResponse: Decodable {
 }
 
 struct EmailLoginResult: Decodable {
-    var userId: Int
+    var id: Int
     var jwt: String
 }

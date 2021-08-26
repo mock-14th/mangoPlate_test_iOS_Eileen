@@ -8,8 +8,8 @@
 import Alamofire
 
 class NewsReviewDataManager {
-    func getRestaurant(reviewId: Int, viewController: AllNewsViewController) {
-        let url = "\(Constant.BASE_URL)/restaurants/reviews/\(reviewId)"
+    func getReview(viewController: AllNewsViewController) {
+        let url = "\(Constant.BASE_URL)/news"
         let encodedurl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         AF.request(encodedurl!, encoding: URLEncoding.default)
             .validate()
@@ -24,3 +24,4 @@ class NewsReviewDataManager {
             }
     }
 }
+

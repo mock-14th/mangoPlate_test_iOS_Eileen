@@ -18,18 +18,6 @@ class SplashViewController: BaseViewController {
     }
     
     @IBAction func kakaoLogin(_ sender: Any) {
-        /*if(UserApi.isKakaoTalkLoginAvailable()) {
-            UserApi.shared.loginWithKakaoTalk {(oauthtoken, error) in
-                if let error = error {
-                    print(error)
-                }
-                else {
-                    print("loginWithKakaoTalk() success.")
-                    
-                    _ = oauthtoken
-                }
-            }
-        }*/
         UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
             if let error = error {
                 print(error)
@@ -40,18 +28,11 @@ class SplashViewController: BaseViewController {
                 let input = KakaoLoginInput(accessToken: oauthToken!.accessToken)
                 KakaoLoginDataManager().kakaoLogin(input, viewController: self)
                 
-                let vc = BaseTabBarController()
-                vc.modalPresentationStyle = .fullScreen
-                vc.modalTransitionStyle = .crossDissolve
-                
-                self.present(vc, animated: true)
                 print(oauthToken?.accessToken, "액세스 토큰")
                 
                 _ = oauthToken
             }
         }
-        
-        
         
     }
     
@@ -65,5 +46,24 @@ class SplashViewController: BaseViewController {
         vc.modalTransitionStyle = .crossDissolve
         
         self.present(vc, animated: true)
+    }
+}
+
+extension SplashViewController {
+    func didKakaoLogin(_ result: KakaoLoginResult){
+        self.dismissIndicator()
+        UserDefaults.standard.set(String(result.userId), forKey: "UserIdKey")
+        //UserDefaults.standard.set(result.jwt, forKey: "jwtKey")
+        JwtToken.token = result.jwt
+        let vc = BaseTabBarController()
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        
+        self.present(vc, animated: true)
+    }
+    
+    func failedToRequest(message: String) {
+        dismissIndicator()
+        presentAlert(message: message)
     }
 }

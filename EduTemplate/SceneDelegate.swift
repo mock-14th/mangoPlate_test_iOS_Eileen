@@ -23,11 +23,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let win = UIWindow(windowScene: windowScene)
         //window?.windowScene = windowScene
-        let controller = SplashViewController()
-        let navController = UINavigationController(rootViewController: controller)
-        win.rootViewController = navController
-        win.makeKeyAndVisible()
-        window = win
+        if JwtToken.token != "" {
+            let controller = BaseTabBarController()
+            let navController = UINavigationController(rootViewController: controller)
+            navController.navigationBar.isHidden = true
+            win.rootViewController = navController
+            win.makeKeyAndVisible()
+            window = win
+        }
+        else {
+            let controller = SplashViewController()
+            let navController = UINavigationController(rootViewController: controller)
+            win.rootViewController = navController
+            win.makeKeyAndVisible()
+            window = win
+        }
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {

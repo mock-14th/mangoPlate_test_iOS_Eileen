@@ -21,6 +21,7 @@ class PhoneViewController: BaseViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBAction func nextButton(_ sender: Any) {
         UserDefaults.standard.set(phoneTextField.text, forKey: "phoneKey")
+        
         navigationController?.pushViewController(PhoneAuthViewController(), animated: true)
     }
     

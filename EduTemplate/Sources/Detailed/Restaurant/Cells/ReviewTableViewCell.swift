@@ -24,7 +24,6 @@ class ReviewTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var pictureCollectionView: UICollectionView!
     
     @IBOutlet weak var reviewLabel: UILabel!
-    @IBOutlet weak var reviewLabelHeight: NSLayoutConstraint!
     
     @IBOutlet weak var pageLabel: UILabel!
     var imageList = [String]()
@@ -37,6 +36,11 @@ class ReviewTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollecti
         pictureCollectionView.dataSource = self
         pictureCollectionView.register(UINib(nibName: "PictureCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PictureCollectionViewCell")
         
+        let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        flowLayout.itemSize = CGSize(width: pictureCollectionView.frame.width - 24, height: pictureCollectionView.frame.height)
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.minimumLineSpacing = 0
+        pictureCollectionView.collectionViewLayout = flowLayout
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -55,11 +59,12 @@ class ReviewTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollecti
         //let reviewHeight = reviewLabel.sizeThatFits(CGSize(width: reviewLabel.frame.width, height: CGFloat.greatestFiniteMagnitude))
         //self.reviewLabelHeight.constant = reviewHeight.height
         let url = URL(string: imageList[indexPath.row])
-        let data = try? Data(contentsOf: url!)
-        cell.foodPictureImage.image = UIImage(data: data!)
+        if url != nil {
+            let data = try? Data(contentsOf: url!)
+            cell.foodPictureImage.image = UIImage(data: data!)
+        }
         
         return cell
-
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {

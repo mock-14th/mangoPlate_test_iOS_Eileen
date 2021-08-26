@@ -11,5 +11,6 @@ target 'EduTemplate' do
   pod 'SnapKit'
   pod 'KakaoSDK'
   pod 'Alamofire'
+  pod 'Firebase/Messaging'
 
 end

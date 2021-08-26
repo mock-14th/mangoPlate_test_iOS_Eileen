@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import CoreLocation
 
 class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
+    var locationManager: CLLocationManager!
+    
     let searchViewController = SearchViewController()
     let searchTabBarItem = UITabBarItem(title: "맛집찾기", image: UIImage(named: "searchitem"), tag: 0)
     
@@ -52,12 +55,20 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
         myInfoNavController.tabBarItem = myInfoTabBarItem
         myInfoLogoutNavController.tabBarItem = myInfoLogoutTabBarItem
         
-        
-        self.viewControllers = [searchNavController, pickNavController, plusNavController, newsNavController, myInfoNavController]
+        if JwtToken.token != "" {
+            self.viewControllers = [searchNavController, pickNavController, plusNavController, newsNavController, myInfoNavController]
+        }
+        else {
+            self.viewControllers = [searchNavController, pickNavController, plusNavController, newsNavController, myInfoLogoutNavController]
+        }
         
         self.delegate = self
         
         setUpMiddleButton()
+        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        self.locationManager.requestWhenInUseAuthorization()
         
     }
     
@@ -88,4 +99,25 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
         self.selectedIndex = 1
     }
     
+}
+
+extension BaseTabBarController: CLLocationManagerDelegate {
+    func getLocationUsagePermission() {
+        self.locationManager.requestWhenInUseAuthorization()
+    }
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            print("GPS 권한 설정됨")
+            self.locationManager.startUpdatingLocation()
+        case .restricted, .notDetermined:
+            print("GPS 권한 설정되지 않음")
+            getLocationUsagePermission()
+        case .denied:
+            print("GPS 권한 요청 거부됨")
+            getLocationUsagePermission()
+        default:
+            print("GPS: Default")
+        }
+    }
 }

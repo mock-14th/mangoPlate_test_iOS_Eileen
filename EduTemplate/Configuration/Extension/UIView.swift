@@ -44,7 +44,7 @@ extension UIView {
     }
     
     func setGradient(){
-        let colors: [CGColor] = [#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0).cgColor, #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.6968056382).cgColor]
+        let colors: [CGColor] = [#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0).cgColor, #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.80194496).cgColor]
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = colors
         gradientLayer.frame = bounds

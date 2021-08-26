@@ -46,9 +46,9 @@
 	<key>NSContactsUsageDescription</key>
 	<string>연락처에 등록된 친구에게 앱을 초대하기 위해 연락처 접근 권한이 필요합니다</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>위치 정보를 기반으로 추천 게시물을 보여주기 위해 위치 접근 권한이 필요합니다</string>
+	<string>편리한 맛집 검색을 위해 위치정보 동의가 필요합니다.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>위치 정보를 기반으로 추천 게시물을 보여주기 위해 위치 접근 권한이 필요합니다</string>
+	<string>편리한 맛집 검색을 위해 위치정보 동의가 필요합니다.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>게시물에 사진을 업로드하기 위해 사진 접근 권한이 필요합니다</string>
 	<key>UIAppFonts</key>

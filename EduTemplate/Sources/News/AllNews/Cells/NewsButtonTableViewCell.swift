@@ -41,6 +41,7 @@ class NewsButtonTableViewCell: UITableViewCell {
         goodButton.configure(with: viewModel)
         goodButton.tintColor = .mainOrange
         goodButton.backgroundColor = UIColor(hex: 0xFBEADA)
+        //goodButton.addTarget(AllNewsViewController, action: #selector(button1), for: <#T##UIControl.Event#>)
         
         self.addSubview(okButton)
         okButton.frame = CGRect(x: 105, y: 15, width: 0, height: 0)

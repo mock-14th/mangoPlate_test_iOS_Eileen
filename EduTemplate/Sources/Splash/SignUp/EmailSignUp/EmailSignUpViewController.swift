@@ -10,10 +10,10 @@ import UIKit
 class EmailSignUpViewController: BaseViewController {
     
     @IBAction func backButton(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     @IBAction func closeButton(_ sender: Any) {
-        navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     var userEmail: String = ""

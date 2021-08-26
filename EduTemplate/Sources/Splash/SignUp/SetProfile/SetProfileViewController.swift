@@ -26,7 +26,7 @@ class SetProfileViewController: BaseViewController {
         
         if (userEmail != "") && (userPassword != "") && (userPhone != "") && (userNickname != "") {
             showIndicator()
-            let input = UserInfoInput(email: userEmail!, password: userPassword!, phoneNumber: userPhone!, nickname: userNickname!, profileImage: nil)
+            let input = UserInfoInput(email: userEmail!, password: userPassword!, phoneNumber: userPhone!, nickname: userNickname!, profileImage: "")
             UserInfoDataManager().emailSignUp(input, viewController: self)
         }
         

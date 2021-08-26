@@ -14,14 +14,15 @@ class EatDealTableViewCell: UITableViewCell {
     @IBOutlet weak var noteLabel: UILabel!
     @IBOutlet weak var percentLabel: UILabel!
     @IBOutlet weak var costPriceLabel: UILabel!
-    var costPrice = "₩59,000"
     @IBOutlet weak var salePriceLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var menuLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
-        //costPriceLabel.attributedText = costPrice.strikeThrough()
         gradientView.setGradient()
     }
 

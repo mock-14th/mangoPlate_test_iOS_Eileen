@@ -25,7 +25,9 @@ class NewsTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
     @IBOutlet weak var dateLabel: UILabel!
     
     @IBOutlet weak var reviewLabel: UILabel!
-    @IBOutlet weak var reviewLabelHeight: NSLayoutConstraint!
+    
+    var pictureString = ""
+    var reviewPictures = [String]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,9 +36,11 @@ class NewsTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
         pictureCollectionView.dataSource = self
         pictureCollectionView.register(UINib(nibName: "PictureCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PictureCollectionViewCell")
         
-        let reviewHeight = reviewLabel.sizeThatFits(CGSize(width: reviewLabel.frame.width, height: CGFloat.greatestFiniteMagnitude))
-        self.reviewLabelHeight.constant = reviewHeight.height
-        
+        let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        flowLayout.itemSize = CGSize(width: pictureCollectionView.frame.width - 24, height: pictureCollectionView.frame.height)
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.minimumLineSpacing = 0
+        pictureCollectionView.collectionViewLayout = flowLayout
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -45,12 +49,19 @@ class NewsTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        reviewPictures = pictureString.components(separatedBy: ",")
+        pageLabel.text = "1/" + String(reviewPictures.count)
+        return reviewPictures.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PictureCollectionViewCell", for: indexPath) as! PictureCollectionViewCell
         
+        if reviewPictures.count > 0 {
+            let url = URL(string: reviewPictures[indexPath.row])
+            let data = try? Data(contentsOf: url!)
+            cell.foodPictureImage.image = UIImage(data: data!)
+        }
         return cell
     }
     
@@ -58,7 +69,7 @@ class NewsTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollection
         if scrollView == pictureCollectionView {
             let page = Int(targetContentOffset.pointee.x / self.pictureCollectionView.bounds.width)
             
-            pageLabel.text = String(page+1) + "/5"
+            pageLabel.text = String(page+1) + "/" + String(reviewPictures.count)
         }
     }
     
